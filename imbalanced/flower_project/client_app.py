@@ -4,7 +4,8 @@ import torch
 
 from flwr.client import ClientApp, NumPyClient
 from flwr.common import Context
-from flower_project.task import Net, get_weights, load_data, set_weights, test, train
+from flower_project.load_data import load_data
+from flower_project.task import Net, get_weights, set_weights, test, train
 
 
 # Define Flower Client and client_fn
