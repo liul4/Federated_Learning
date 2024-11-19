@@ -3,7 +3,7 @@
 from flwr.common import Context, ndarrays_to_parameters
 from flwr.server import ServerApp, ServerAppComponents, ServerConfig
 from flwr.server.strategy import FedAvg
-from flower_project.task import Net, get_weights
+from flower_project.net import Net, get_weights
 
 
 def server_fn(context: Context):
