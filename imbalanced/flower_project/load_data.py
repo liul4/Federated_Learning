@@ -24,7 +24,7 @@ class CustomDataset(Dataset):
         return {"img": image, "label": self.label}
 
 
-def load_data(partition_id: int, num_partitions: int):
+def load_data(partition_id: int, num_partitions: int, batch_size: int):
     pytorch_transforms = Compose(
         [Resize((32, 32)), ToTensor(), Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))]
     )
@@ -32,8 +32,13 @@ def load_data(partition_id: int, num_partitions: int):
     tb_dataset = CustomDataset("data/Tuberculosis", label=1, transform=pytorch_transforms)
     full_dataset = ConcatDataset([normal_dataset, tb_dataset])
     partition_size = len(full_dataset) // num_partitions
-    partitions = random_split(full_dataset, [partition_size] * num_partitions)
-    partition_train_test = random_split(partitions[partition_id], [int(0.8 * partition_size), int(0.2 * partition_size)])
-    trainloader = DataLoader(partition_train_test[0], batch_size=32, shuffle=True)
-    testloader = DataLoader(partition_train_test[1], batch_size=32)
+    partition_sizes = [partition_size] * num_partitions
+    partition_sizes[-1] += len(full_dataset) % num_partitions  # Handle the remainder
+    partitions = random_split(full_dataset, partition_sizes)
+
+    train_size = int(0.8 * partition_size)
+    test_size = partition_size - train_size
+    partition_train_test = random_split(partitions[partition_id], [train_size, test_size])
+    trainloader = DataLoader(partition_train_test[0], batch_size=batch_size, shuffle=True)
+    testloader = DataLoader(partition_train_test[1], batch_size=batch_size)
     return trainloader, testloader
