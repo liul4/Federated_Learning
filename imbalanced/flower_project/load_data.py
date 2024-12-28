@@ -26,7 +26,7 @@ class CustomDataset(Dataset):
 
 def load_data(partition_id: int, num_partitions: int, batch_size: int):
     pytorch_transforms = Compose(
-        [Resize((32, 32)), ToTensor(), Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))]
+        [Resize((256, 256)), ToTensor(), Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))]
     )
     normal_dataset = CustomDataset("data/Normal", label=0, transform=pytorch_transforms)
     tb_dataset = CustomDataset("data/Tuberculosis", label=1, transform=pytorch_transforms)
@@ -35,9 +35,10 @@ def load_data(partition_id: int, num_partitions: int, batch_size: int):
     partition_sizes = [partition_size] * num_partitions
     partition_sizes[-1] += len(full_dataset) % num_partitions  # Handle the remainder
     partitions = random_split(full_dataset, partition_sizes)
+    partition_len = len(partitions[partition_id])
 
-    train_size = int(0.8 * partition_size)
-    test_size = partition_size - train_size
+    train_size = int(0.8 * partition_len)
+    test_size = partition_len - train_size
     partition_train_test = random_split(partitions[partition_id], [train_size, test_size])
     trainloader = DataLoader(partition_train_test[0], batch_size=batch_size, shuffle=True)
     testloader = DataLoader(partition_train_test[1], batch_size=batch_size)
