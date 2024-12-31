@@ -17,7 +17,7 @@ class Net(nn.Module):
         self.conv2 = nn.Conv2d(6, 16, 5)
         self.fc1 = nn.Linear(16 * 61 * 61, 120)
         self.fc2 = nn.Linear(120, 84)
-        self.fc3 = nn.Linear(84, 2) #output 2 classes
+        self.fc3 = nn.Linear(84, 3) #output 3 classes
 
     def forward(self, x):
         x = self.pool(F.relu(self.conv1(x)))
@@ -45,14 +45,21 @@ def train(net, trainloader, valloader, epochs, learning_rate, device):
     optimizer = torch.optim.Adam(net.parameters(), lr=learning_rate)
     # optimizer = torch.optim.SGD(net.parameters(), lr=learning_rate, momentum=0.9)
     net.train()
-    for _ in range(epochs):
-        for batch in trainloader:
+
+    for epoch in range(epochs):
+        running_loss = 0.0 # added
+        for i, batch in enumerate(trainloader):
             images = batch["img"]
             labels = batch["label"]
             optimizer.zero_grad()
-            criterion(net(images.to(device)), labels.to(device)).backward()
+            loss = criterion(net(images.to(device)), labels.to(device))
+            loss.backward()
             optimizer.step()
+            running_loss += loss.item() # added
+        print(f"print net.train: Epoch {epoch+1}/{epochs}, Loss: {running_loss / len(trainloader):.4f}") # added print
+
     val_loss, val_acc = test(net, valloader, device)
+    print(f"print net.val: Validation Loss: {val_loss:.4f}, Accuracy: {val_acc:.4f}")
 
     results = {
         "val_loss": val_loss,
@@ -64,7 +71,7 @@ def train(net, trainloader, valloader, epochs, learning_rate, device):
 def test(net, testloader, device):
     """Validate the model on the test set."""
     net.to(device)
-    criterion = torch.nn.CrossEntropyLoss()
+    criterion = torch.nn.CrossEntropyLoss().to(device) # add to device
     correct, loss = 0, 0.0
     with torch.no_grad():
         for batch in testloader:
