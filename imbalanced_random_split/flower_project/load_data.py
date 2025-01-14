@@ -32,7 +32,7 @@ def load_data(partition_id: int, num_partitions: int, batch_size: int):
     )
     normal_dataset = CustomDataset("C:/Users/14871/Downloads/data/train/Normal", label=0, transform=pytorch_transforms)
     tb_dataset = CustomDataset("C:/Users/14871/Downloads/data/train/Tuberculosis", label=1, transform=pytorch_transforms)
-    pn_dataset = CustomDataset("C:/Users/14871/Downloads/data/train/Pneumonia", label=1, transform=pytorch_transforms)
+    pn_dataset = CustomDataset("C:/Users/14871/Downloads/data/train/Pneumonia", label=2, transform=pytorch_transforms)
     full_dataset = ConcatDataset([normal_dataset, tb_dataset, pn_dataset])
     partition_size = len(full_dataset) // num_partitions
     partition_sizes = [partition_size] * num_partitions

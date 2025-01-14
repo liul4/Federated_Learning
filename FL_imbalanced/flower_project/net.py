@@ -1,6 +1,8 @@
 """flower-project: A Flower / PyTorch app."""
 
 from collections import OrderedDict
+from sklearn.utils.class_weight import compute_class_weight
+import numpy as np
 
 import torch
 import torch.nn as nn
@@ -41,7 +43,11 @@ def set_weights(net, parameters):
 def train(net, trainloader, valloader, epochs, learning_rate, device):
     """Train the model on the training set."""
     net.to(device)  # move model to GPU if available
-    criterion = torch.nn.CrossEntropyLoss().to(device)
+    # compute class weights
+    labels = [sample["label"] for sample in trainloader.dataset]
+    class_weights = compute_class_weight('balanced', classes=np.unique(labels), y=labels)
+    class_weights = torch.tensor(class_weights, dtype=torch.float32).to(device)
+    criterion = torch.nn.CrossEntropyLoss(weight=class_weights)
     optimizer = torch.optim.Adam(net.parameters(), lr=learning_rate)
     # optimizer = torch.optim.SGD(net.parameters(), lr=learning_rate, momentum=0.9)
     net.train()
