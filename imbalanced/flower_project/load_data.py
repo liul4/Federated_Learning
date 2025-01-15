@@ -2,6 +2,10 @@ from PIL import Image
 import os
 from torch.utils.data import DataLoader, ConcatDataset, random_split, Dataset
 from torchvision.transforms import Compose, Normalize, ToTensor, Resize
+from sklearn.model_selection import train_test_split
+from torch.utils.data import Subset
+import pickle
+import torch
 
 
 class CustomDataset(Dataset):
@@ -24,7 +28,64 @@ class CustomDataset(Dataset):
         return {"img": image, "label": self.label}
 
 
+def store_data():
+    pytorch_transforms = Compose(
+        [Resize((256, 256)), ToTensor(), Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))]
+    )
+    normal_train_dataset = CustomDataset("C:/Users/14871/Downloads/data/train/Normal", label=0, transform=pytorch_transforms)
+    tb_train_dataset = CustomDataset("C:/Users/14871/Downloads/data/train/Tuberculosis", label=1, transform=pytorch_transforms)
+    pneumonia_train_dataset = CustomDataset("C:/Users/14871/Downloads/data/train/Pneumonia", label=2, transform=pytorch_transforms)
+    full_train_dataset = ConcatDataset([normal_train_dataset, tb_train_dataset, pneumonia_train_dataset])
+
+    normal_test_dataset = CustomDataset("C:/Users/14871/Downloads/data/test/Normal", label=0, transform=pytorch_transforms)
+    tb_test_dataset = CustomDataset("C:/Users/14871/Downloads/data/test/Tuberculosis", label=1, transform=pytorch_transforms)
+    pneumonia_test_dataset = CustomDataset("C:/Users/14871/Downloads/data/test/Pneumonia", label=2, transform=pytorch_transforms)
+    test_dataset = ConcatDataset([normal_test_dataset, tb_test_dataset, pneumonia_test_dataset])
+
+     # Split the training set into partitions for clients
+    partition_size = len(full_train_dataset) // 4
+    partition_sizes = [partition_size] * 4
+    partition_sizes[-1] += len(full_train_dataset) % 4  # Handle the remainder
+    partitions = random_split(full_train_dataset, partition_sizes)
+    
+    return partitions, test_dataset
+partitions, test_dataset = store_data()
+for i, _ in enumerate(partitions):
+    partition_train_data = partitions[i]
+    
+    # Split into training and validation
+    train_size = int(0.8 * len(partition_train_data))
+    val_size = len(partition_train_data) - train_size
+    partition_train, partition_val = random_split(partition_train_data, [train_size, val_size])
+
+    # Save the dataset as a pickle file
+    train_dataset_name = "train" + str(i)+"dataset.pt"
+    val_dataset_name = "val" + str(i)+"dataset.pt"
+    torch.save(partition_train, train_dataset_name)
+    torch.save(partition_val, val_dataset_name)
+    torch.save(test_dataset, "testset.pt")
+
+
 def load_data(partition_id: int, num_partitions: int, batch_size: int):
+    #train_name = "C:/Users/14871/Desktop/newFolder/24-25-1/Federated_Learning/train"+ str(partition_id) +"dataset.pt"
+    train_name = "train" + str(partition_id)+"dataset.pt"
+    val_name = "val" + str(partition_id)+"dataset.pt"
+    #val_name = "C:/Users/14871/Desktop/newFolder/24-25-1/Federated_Learning/val" + str(partition_id)+"dataset.pt"
+
+    partition_train = torch.load(train_name)
+    partition_val = torch.load(val_name)
+    #test_dataset = torch.load("C:/Users/14871/Desktop/newFolder/24-25-1/Federated_Learning/testset.pt")
+    test_dataset = torch.load("testset.pt")
+
+    # Create DataLoaders for train, validation, and test
+    trainloader = DataLoader(partition_train, batch_size=batch_size, shuffle=True)
+    valloader = DataLoader(partition_val, batch_size=batch_size)
+    testloader = DataLoader(test_dataset, batch_size=batch_size)
+    
+    return trainloader, valloader, testloader
+
+
+def load_data_old(partition_id: int, num_partitions: int, batch_size: int):
     pytorch_transforms = Compose(
         [Resize((256, 256)), ToTensor(), Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))]
     )
@@ -62,7 +123,7 @@ def load_data(partition_id: int, num_partitions: int, batch_size: int):
 
 
 """
-removed validation
+partition
 
 def load_data(partition_id: int, num_partitions: int, batch_size: int):
     pytorch_transforms = Compose(
@@ -71,24 +132,36 @@ def load_data(partition_id: int, num_partitions: int, batch_size: int):
     normal_train_dataset = CustomDataset("C:/Users/14871/Downloads/data/train/Normal", label=0, transform=pytorch_transforms)
     tb_train_dataset = CustomDataset("C:/Users/14871/Downloads/data/train/Tuberculosis", label=1, transform=pytorch_transforms)
     pneumonia_train_dataset = CustomDataset("C:/Users/14871/Downloads/data/train/Pneumonia", label=2, transform=pytorch_transforms)
-    full_train_dataset = ConcatDataset([normal_train_dataset, tb_train_dataset, pneumonia_train_dataset])
+    #full_train_dataset = ConcatDataset([normal_train_dataset, tb_train_dataset, pneumonia_train_dataset])
 
     normal_test_dataset = CustomDataset("C:/Users/14871/Downloads/data/test/Normal", label=0, transform=pytorch_transforms)
     tb_test_dataset = CustomDataset("C:/Users/14871/Downloads/data/test/Tuberculosis", label=1, transform=pytorch_transforms)
     pneumonia_test_dataset = CustomDataset("C:/Users/14871/Downloads/data/test/Pneumonia", label=2, transform=pytorch_transforms)
-    test_dataset = ConcatDataset([normal_test_dataset, tb_test_dataset, pneumonia_test_dataset])
+    test_dataset = list(ConcatDataset([normal_test_dataset, tb_test_dataset, pneumonia_test_dataset]))
+    random.shuffle(test_dataset)
 
-    partition_size = len(full_train_dataset) // num_partitions
-    partition_sizes = [partition_size] * num_partitions
-    partition_sizes[-1] += len(full_train_dataset) % num_partitions  # Handle remainder
-    partitions = random_split(full_train_dataset, partition_sizes)
+    partition_train_normal, partition_val_normal = partition_train_data(partition_id, num_partitions, normal_train_dataset)
+    partition_train_tb, partition_val_tb = partition_train_data(partition_id, num_partitions, tb_train_dataset)
+    partition_train_pneumonia, partition_val_pneumonia = partition_train_data(partition_id, num_partitions, pneumonia_train_dataset)
+
+    partition_train =  ConcatDataset([partition_train_normal, partition_train_tb, partition_train_pneumonia])
+    partition_val = ConcatDataset([partition_val_normal, partition_val_tb, partition_val_pneumonia])
     
-    # Select the partition for the current client
-    partition_train_data = partitions[partition_id]
-
     # Create DataLoaders for train, validation, and test
-    trainloader = DataLoader(partition_train_data, batch_size=batch_size, shuffle=True)
-    testloader = DataLoader(test_dataset, batch_size=batch_size)
+    trainloader = DataLoader(partition_train, batch_size=batch_size, shuffle=True)
+    valloader = DataLoader(partition_val, batch_size=batch_size)
+    testloader = DataLoader(test_dataset, batch_size=batch_size, shuffle=True)
     
-    return trainloader, testloader
+    return trainloader, valloader, testloader
+
+def partition_train_data(partition_id: int, num_partitions: int, input_dataset: Dataset):
+    partition_size = len(input_dataset) // num_partitions
+    partition_sizes = [partition_size] * num_partitions
+    partition_sizes[-1] += len(input_dataset) % num_partitions  # Handle the remainder
+    partitions = random_split(input_dataset, partition_sizes)
+    partition_train_data = partitions[partition_id]
+    train_size = int(0.8 * len(partition_train_data))
+    val_size = len(partition_train_data) - train_size
+    partition_train, partition_val = random_split(partition_train_data, [train_size, val_size])
+    return partition_train, partition_val
 """
