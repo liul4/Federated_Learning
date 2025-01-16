@@ -11,32 +11,59 @@ import torch.nn.functional as F
 from torchvision.models import densenet121, resnet18
 
 
-class ResNet(nn.Module):
-    """Pretrained resnet with fine-tuning"""
-
-    def __init__(self):
-        super(ResNet, self).__init__()
-        # Load pretrained resnet model
-        self.resnet = resnet18(weights="IMAGENET1K_V1")
-
-        # Fine-tune all layers (optional: freeze earlier layers)
-        for param in self.resnet.parameters():
-            param.requires_grad = True  # Enable gradient computation for all layers
-
-        # Replace the classifier with a custom output layer
-        num_features = self.resnet.fc.in_features
-        self.resnet.fc = nn.Linear(num_features, 3) # 3 output layer for 3 classes
-
-    def forward(self, x):
-        # Pass input through resnet
-        return self.resnet(x)
-
-
 class Net(nn.Module):
-    """Model (simple CNN)"""
+    """Transfer Learning Network using Pretrained ResNet18"""
 
     def __init__(self):
         super(Net, self).__init__()
+        
+        # Load pretrained ResNet18
+        self.resnet = resnet18(pretrained=True)
+        
+        # Freeze early layers to reduce training time and prevent overfitting
+        for param in self.resnet.parameters():
+            param.requires_grad = False
+        
+        # Unfreeze the final layers to fine-tune
+        for param in self.resnet.fc.parameters():
+            param.requires_grad = True
+        
+        # Replace the fully connected layer to match number of classes
+        self.resnet.fc = nn.Linear(self.resnet.fc.in_features, 3)
+
+    def forward(self, x):
+        return self.resnet(x)
+    
+
+class ResNet(nn.Module):
+    """Transfer Learning Network using Pretrained ResNet18"""
+
+    def __init__(self):
+        super(ResNet, self).__init__()
+        
+        # Load pretrained ResNet18
+        self.resnet = resnet18(pretrained=True)
+        
+        # Freeze early layers to reduce training time and prevent overfitting
+        for param in self.resnet.parameters():
+            param.requires_grad = False
+        
+        # Unfreeze the final layers to fine-tune
+        for param in self.resnet.fc.parameters():
+            param.requires_grad = True
+        
+        # Replace the fully connected layer to match number of classes
+        self.resnet.fc = nn.Linear(self.resnet.fc.in_features, 3)
+
+    def forward(self, x):
+        return self.resnet(x)
+
+
+class CNN(nn.Module):
+    """Model (simple CNN)"""
+
+    def __init__(self):
+        super(CNN, self).__init__()
         self.conv1 = nn.Conv2d(3, 6, 5)
         self.pool = nn.MaxPool2d(2, 2)
         self.conv2 = nn.Conv2d(6, 16, 5)
