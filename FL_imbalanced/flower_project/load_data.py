@@ -40,7 +40,7 @@ def load_data(partition_id: int, num_partitions: int, batch_size: int):
     partitions = random_split(full_dataset, partition_sizes)
     partition_len = len(partitions[partition_id])
 
-    train_size = int(0.8 * partition_len)
+    train_size = int(0.7 * partition_len)
     val_size = int(0.1 * partition_len)
     test_size = partition_len - train_size - val_size
     partition_train_test = random_split(partitions[partition_id], [train_size, val_size, test_size])
