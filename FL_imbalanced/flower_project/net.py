@@ -3,6 +3,7 @@
 from collections import OrderedDict
 from sklearn.utils.class_weight import compute_class_weight
 import numpy as np
+from sklearn.metrics import classification_report
 
 import torch
 import torch.nn as nn
@@ -78,7 +79,9 @@ def test(net, testloader, device):
     """Validate the model on the test set."""
     net.to(device)
     criterion = torch.nn.CrossEntropyLoss().to(device) # add to device
+    all_labels, all_preds = [], []
     correct, loss = 0, 0.0
+    net.eval()
     with torch.no_grad():
         for batch in testloader:
             images = batch["img"].to(device)
@@ -86,6 +89,11 @@ def test(net, testloader, device):
             outputs = net(images)
             loss += criterion(outputs, labels).item()
             correct += (torch.max(outputs.data, 1)[1] == labels).sum().item()
+            preds = torch.max(outputs.data, 1)[1]
+            all_labels.extend(labels.cpu().numpy())
+            all_preds.extend(preds.cpu().numpy())
+    report = classification_report(all_labels, all_preds, target_names=["Normal", "Tuberculosis", "Pneumonia"])
+    print(report)
     accuracy = correct / len(testloader.dataset)
     loss = loss / len(testloader)
     return loss, accuracy
