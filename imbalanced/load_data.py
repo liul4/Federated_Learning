@@ -27,7 +27,7 @@ class CustomDataset(Dataset):
             image = self.transform(image)
         return {"img": image, "label": self.label}
 
-
+"""
 def store_data():
     pytorch_transforms = Compose(
         [Resize((256, 256)), ToTensor(), Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))]
@@ -64,6 +64,7 @@ for i, _ in enumerate(partitions):
     torch.save(partition_train, train_dataset_name)
     torch.save(partition_val, val_dataset_name)
     torch.save(test_dataset, "testset.pt")
+"""
 
 
 def load_data(partition_id: int, num_partitions: int, batch_size: int):

@@ -5,16 +5,15 @@ from typing import List, Tuple
 from flwr.common import Context, Metrics, ndarrays_to_parameters
 from flwr.server import ServerApp, ServerAppComponents, ServerConfig
 from flwr.server.strategy import FedAvg
-from flower_project.net import Net, get_weights, set_weights
+from imbalanced.net import Net, get_weights, set_weights
 import torch
 from sklearn.metrics import classification_report
-from flower_project.load_data import load_data
+from imbalanced.load_data import load_data
 
 
 def evaluate_fn(server_round, parameters_ndarrays, config):
     net = Net()
     set_weights(net, parameters_ndarrays)
-
     def get_evaluate_fn(net):
         _, _, testloader = load_data(1, 3, 32)
         device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
@@ -44,7 +43,7 @@ def evaluate_fn(server_round, parameters_ndarrays, config):
     #return {"loss": loss, "accuracy": accuracy}
     return loss, {"accuracy": accuracy, "loss": loss}
 
-
+"""
 def weighted_average(metrics: List[Tuple[int, Metrics]]) -> Metrics:
     # Multiply accuracy of each client by number of examples used
     accuracies = [num_examples * m["accuracy"] for num_examples, m in metrics]
@@ -55,6 +54,7 @@ def weighted_average(metrics: List[Tuple[int, Metrics]]) -> Metrics:
 
     # Aggregate and return custom metric (weighted average)
     return {"accuracy": sum(accuracies) / sum(examples)}
+"""
 
 def server_fn(context: Context):
     # Read from config

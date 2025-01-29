@@ -4,8 +4,8 @@ import torch
 
 from flwr.client import ClientApp, NumPyClient
 from flwr.common import Context
-from flower_project.load_data import load_data, CustomDataset
-from flower_project.net import Net, get_weights, set_weights, test, train
+from imbalanced.load_data import load_data, CustomDataset
+from imbalanced.net import Net, get_weights, set_weights, test, train
 #from torch.utils.data import Dataset
 #import os
 #from PIL import Image
