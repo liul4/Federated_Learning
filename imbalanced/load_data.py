@@ -27,10 +27,13 @@ class CustomDataset(Dataset):
             image = self.transform(image)
         return {"img": image, "label": self.label}
 
-"""
-def store_data():
+
+def process_data():
+    """
+    This function is needed to store the data as pt files to be loaded later
+    """
     pytorch_transforms = Compose(
-        [Resize((256, 256)), ToTensor(), Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))]
+        [Resize((224, 224)), ToTensor(), Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))]
     )
     normal_train_dataset = CustomDataset("C:/Users/14871/Downloads/data/train/Normal", label=0, transform=pytorch_transforms)
     tb_train_dataset = CustomDataset("C:/Users/14871/Downloads/data/train/Tuberculosis", label=1, transform=pytorch_transforms)
@@ -49,7 +52,10 @@ def store_data():
     partitions = random_split(full_train_dataset, partition_sizes)
     
     return partitions, test_dataset
-partitions, test_dataset = store_data()
+
+
+partitions, test_dataset = process_data()
+
 for i, _ in enumerate(partitions):
     partition_train_data = partitions[i]
     
@@ -64,7 +70,6 @@ for i, _ in enumerate(partitions):
     torch.save(partition_train, train_dataset_name)
     torch.save(partition_val, val_dataset_name)
     torch.save(test_dataset, "testset.pt")
-"""
 
 
 def load_data(partition_id: int, num_partitions: int, batch_size: int):

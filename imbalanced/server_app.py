@@ -34,7 +34,7 @@ def evaluate_fn(server_round, parameters_ndarrays, config):
                 all_labels.extend(labels.cpu().numpy())
                 all_preds.extend(preds.cpu().numpy())
         report = classification_report(all_labels, all_preds, target_names=["Normal", "Tuberculosis", "Pneumonia"])
-        print(str(server_round) + "server test" + report)
+        print("server round " + str(server_round) + " server test" + report)
         accuracy = correct / len(testloader.dataset)
         loss = loss / len(testloader)
         return loss, accuracy
@@ -43,7 +43,7 @@ def evaluate_fn(server_round, parameters_ndarrays, config):
     #return {"loss": loss, "accuracy": accuracy}
     return loss, {"accuracy": accuracy, "loss": loss}
 
-"""
+
 def weighted_average(metrics: List[Tuple[int, Metrics]]) -> Metrics:
     # Multiply accuracy of each client by number of examples used
     accuracies = [num_examples * m["accuracy"] for num_examples, m in metrics]
@@ -54,7 +54,7 @@ def weighted_average(metrics: List[Tuple[int, Metrics]]) -> Metrics:
 
     # Aggregate and return custom metric (weighted average)
     return {"accuracy": sum(accuracies) / sum(examples)}
-"""
+
 
 def server_fn(context: Context):
     # Read from config
@@ -71,7 +71,7 @@ def server_fn(context: Context):
         fraction_evaluate=1.0,
         min_available_clients=2,
         evaluate_fn = evaluate_fn,
-        #evaluate_metrics_aggregation_fn=weighted_average,
+        evaluate_metrics_aggregation_fn=weighted_average,
         initial_parameters=parameters,
     )
     config = ServerConfig(num_rounds=num_rounds)

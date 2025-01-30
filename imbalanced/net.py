@@ -9,6 +9,7 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 from torchvision.models import densenet121, resnet18
+from torchvision.models import ResNet18_Weights
 
 
 class Net(nn.Module):
@@ -18,7 +19,8 @@ class Net(nn.Module):
         super(Net, self).__init__()
         
         # Load pretrained ResNet18
-        self.resnet = resnet18(pretrained=True)
+        #self.resnet = resnet18(pretrained=True)
+        self.resnet = resnet18(weights=ResNet18_Weights.DEFAULT) 
         
         # Freeze early layers to reduce training time and prevent overfitting
         for param in self.resnet.parameters():
@@ -42,7 +44,8 @@ class ResNet(nn.Module):
         super(ResNet, self).__init__()
         
         # Load pretrained ResNet18
-        self.resnet = resnet18(pretrained=True)
+        #self.resnet = resnet18(pretrained=True)
+        self.resnet = resnet18(weights=ResNet18_Weights.DEFAULT) 
         
         # Freeze early layers to reduce training time and prevent overfitting
         for param in self.resnet.parameters():
@@ -164,7 +167,7 @@ def test(net, testloader, device):
             all_labels.extend(labels.cpu().numpy())
             all_preds.extend(preds.cpu().numpy())
     report = classification_report(all_labels, all_preds, target_names=["Normal", "Tuberculosis", "Pneumonia"], zero_division=0)
-    print("test report" + report)
+    print(report)
     accuracy = correct / len(testloader.dataset)
     loss = loss / len(testloader)
     return loss, accuracy

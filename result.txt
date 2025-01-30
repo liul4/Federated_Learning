@@ -3,321 +3,263 @@ INFO :
 INFO :      [INIT]
 INFO :      Using initial global parameters provided by strategy
 INFO :      Starting evaluation of initial global parameters
-0server test              precision    recall  f1-score   support
+server round 0 server test              precision    recall  f1-score   support
 
-      Normal       0.29      0.09      0.14       100
-Tuberculosis       0.21      0.26      0.23       100
-   Pneumonia       0.13      0.19      0.15       100
+      Normal       0.23      0.19      0.21       100
+Tuberculosis       0.31      0.38      0.34       100
+   Pneumonia       0.24      0.23      0.24       100
 
-    accuracy                           0.18       300
-   macro avg       0.21      0.18      0.18       300
-weighted avg       0.21      0.18      0.18       300
+    accuracy                           0.27       300
+   macro avg       0.26      0.27      0.26       300
+weighted avg       0.26      0.27      0.26       300
 
-INFO :      initial parameters (loss, other metrics): 1.2131219029426574, {'accuracy': 0.18, 'loss': 1.2131219029426574}
+INFO :      initial parameters (loss, other metrics): 1.1662945032119751, {'accuracy': 0.26666666666666666, 'loss': 1.1662945032119751}
 INFO :
 INFO :      [ROUND 1]
 INFO :      configure_fit: strategy sampled 4 clients (out of 4)
-(ClientAppActor pid=23184) C:\Users\14871\AppData\Local\Programs\Python\Python39\lib\site-packages\torchvision\models\_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
-(ClientAppActor pid=23184)   warnings.warn(
-(ClientAppActor pid=23184) C:\Users\14871\AppData\Local\Programs\Python\Python39\lib\site-packages\torchvision\models\_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=ResNet18_Weights.IMAGENET1K_V1`. You can also use `weights=ResNet18_Weights.DEFAULT` to get the most up-to-date weights.
-(ClientAppActor pid=23184)   warnings.warn(msg)
-(ClientAppActor pid=23184) loading data
-(ClientAppActor pid=23184) loaded data
-(ClientAppActor pid=23124) print net.train: Epoch 1/1, Loss: 0.5793
-(ClientAppActor pid=23124) loading data [repeated 3x across cluster] (Ray deduplicates logs by default. Set RAY_DEDUP_LOGS=0 to disable log deduplication, or see https://docs.ray.io/en/master/ray-observability/ray-logging.html#log-deduplication for more options.)
-(ClientAppActor pid=23124) loaded data [repeated 3x across cluster]
-(ClientAppActor pid=23132) print net.train: Epoch 1/1, Loss: 0.5709
-(ClientAppActor pid=23184) print net.train: Epoch 1/1, Loss: 0.8000
-(ClientAppActor pid=23124) test report              precision    recall  f1-score   support
-(ClientAppActor pid=23124)
-(ClientAppActor pid=23124)       Normal       0.91      0.85      0.88       462
-(ClientAppActor pid=23124) Tuberculosis       0.94      0.38      0.54        80
-(ClientAppActor pid=23124)    Pneumonia       0.73      0.98      0.83       215
-(ClientAppActor pid=23124)
-(ClientAppActor pid=23124)     accuracy                           0.84       757
-(ClientAppActor pid=23124)    macro avg       0.86      0.74      0.75       757
-(ClientAppActor pid=23124) weighted avg       0.86      0.84      0.83       757
-(ClientAppActor pid=23124)
-(ClientAppActor pid=23124) print net.val: Validation Loss: 0.4251, Accuracy: 0.8388
-(ClientAppActor pid=23144) print net.train: Epoch 1/1, Loss: 0.5748
-(ClientAppActor pid=23132) test report              precision    recall  f1-score   support
-(ClientAppActor pid=23132)  [repeated 3x across cluster]
-(ClientAppActor pid=23132)       Normal       0.94      0.90      0.92       445
-(ClientAppActor pid=23132) Tuberculosis       0.64      0.85      0.73        80
-(ClientAppActor pid=23132)    Pneumonia       0.95      0.91      0.93       231
-(ClientAppActor pid=23132)     accuracy                           0.90       756
-(ClientAppActor pid=23132)    macro avg       0.84      0.89      0.86       756
-(ClientAppActor pid=23132) weighted avg       0.91      0.90      0.90       756
-(ClientAppActor pid=23132) print net.val: Validation Loss: 0.2609, Accuracy: 0.8995
-(ClientAppActor pid=23144) test report              precision    recall  f1-score   support
-(ClientAppActor pid=23144)       Normal       0.97      0.88      0.92       448
-(ClientAppActor pid=23144) Tuberculosis       0.64      0.86      0.73        81
-(ClientAppActor pid=23144)    Pneumonia       0.93      0.98      0.96       227
-(ClientAppActor pid=23144)     accuracy                           0.91       756
-(ClientAppActor pid=23144)    macro avg       0.84      0.91      0.87       756
-(ClientAppActor pid=23144) weighted avg       0.92      0.91      0.91       756
-(ClientAppActor pid=23144) print net.val: Validation Loss: 0.2378, Accuracy: 0.9061
+(ClientAppActor pid=16080) loading data
+(ClientAppActor pid=16080) loaded data
+(ClientAppActor pid=16080) print net.train: Epoch 1/1, Loss: 0.6052
+(ClientAppActor pid=22376) loading data [repeated 3x across cluster] (Ray deduplicates logs by default. Set RAY_DEDUP_LOGS=0 to disable log deduplication, or see https://docs.ray.io/en/master/ray-observability/ray-logging.html#log-deduplication for more options.)
+(ClientAppActor pid=22376) loaded data [repeated 3x across cluster]
+(ClientAppActor pid=22376)               precision    recall  f1-score   support
+(ClientAppActor pid=22376)
+(ClientAppActor pid=22376)       Normal       0.96      0.79      0.87       443
+(ClientAppActor pid=22376) Tuberculosis       0.62      0.90      0.73       102
+(ClientAppActor pid=22376)    Pneumonia       0.85      0.98      0.91       211
+(ClientAppActor pid=22376)
+(ClientAppActor pid=22376)     accuracy                           0.86       756
+(ClientAppActor pid=22376)    macro avg       0.81      0.89      0.84       756
+(ClientAppActor pid=22376) weighted avg       0.88      0.86      0.86       756
+(ClientAppActor pid=22376)
+(ClientAppActor pid=22376) print net.val: Validation Loss: 0.3571, Accuracy: 0.8585
+(ClientAppActor pid=14160) print net.train: Epoch 1/1, Loss: 0.6009 [repeated 3x across cluster]
+(ClientAppActor pid=4452)               precision    recall  f1-score   support [repeated 3x across cluster]
+(ClientAppActor pid=4452)  [repeated 9x across cluster]
+(ClientAppActor pid=4452)       Normal       0.97      0.71      0.82       459 [repeated 3x across cluster]
+(ClientAppActor pid=4452) Tuberculosis       0.43      0.96      0.59        92 [repeated 3x across cluster]
+(ClientAppActor pid=4452)    Pneumonia       0.92      0.96      0.94       206 [repeated 3x across cluster]
+(ClientAppActor pid=4452)     accuracy                           0.81       757 [repeated 3x across cluster]
+(ClientAppActor pid=4452)    macro avg       0.77      0.88      0.78       757 [repeated 3x across cluster]
+(ClientAppActor pid=4452) weighted avg       0.89      0.81      0.83       757 [repeated 3x across cluster]
+(ClientAppActor pid=4452) print net.val: Validation Loss: 0.4806, Accuracy: 0.8098 [repeated 3x across cluster]        
 INFO :      aggregate_fit: received 4 results and 0 failures
 WARNING :   No fit_metrics_aggregation_fn provided
-C:\Users\14871\AppData\Local\Programs\Python\Python39\lib\site-packages\torchvision\models\_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
-  warnings.warn(
-C:\Users\14871\AppData\Local\Programs\Python\Python39\lib\site-packages\torchvision\models\_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=ResNet18_Weights.IMAGENET1K_V1`. You can also use `weights=ResNet18_Weights.DEFAULT` to get the most up-to-date weights.
-  warnings.warn(msg)
-1server test              precision    recall  f1-score   support
+server round 1 server test              precision    recall  f1-score   support
 
-      Normal       0.82      0.84      0.83       100
-Tuberculosis       0.92      0.80      0.86       100
-   Pneumonia       0.90      0.99      0.94       100
+      Normal       0.82      0.83      0.83       100
+Tuberculosis       0.87      0.84      0.85       100
+   Pneumonia       0.93      0.95      0.94       100
 
-    accuracy                           0.88       300
-   macro avg       0.88      0.88      0.88       300
-weighted avg       0.88      0.88      0.88       300
+    accuracy                           0.87       300
+   macro avg       0.87      0.87      0.87       300
+weighted avg       0.87      0.87      0.87       300
 
-INFO :      fit progress: (1, 0.30271400827914474, {'accuracy': 0.8766666666666667, 'loss': 0.30271400827914474}, 501.9219707)
+INFO :      fit progress: (1, 0.26619805321097373, {'accuracy': 0.8733333333333333, 'loss': 0.26619805321097373}, 358.8435698)
 INFO :      configure_evaluate: strategy sampled 4 clients (out of 4)
-(ClientAppActor pid=23132) C:\Users\14871\AppData\Local\Programs\Python\Python39\lib\site-packages\torchvision\models\_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead. [repeated 4x across cluster]
-(ClientAppActor pid=23132)   warnings.warn( [repeated 4x across cluster]
-(ClientAppActor pid=23132) C:\Users\14871\AppData\Local\Programs\Python\Python39\lib\site-packages\torchvision\models\_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=ResNet18_Weights.IMAGENET1K_V1`. You can also use `weights=ResNet18_Weights.DEFAULT` to get the most up-to-date weights. [repeated 4x across cluster]
-(ClientAppActor pid=23132)   warnings.warn(msg) [repeated 4x across cluster]
-(ClientAppActor pid=23184) loading data
-(ClientAppActor pid=23184) loaded data
-(ClientAppActor pid=23184)  [repeated 6x across cluster]
-(ClientAppActor pid=23184) test report              precision    recall  f1-score   support
-(ClientAppActor pid=23184)       Normal       0.98      0.49      0.65       460
-(ClientAppActor pid=23184) Tuberculosis       0.34      0.93      0.50       102
-(ClientAppActor pid=23184)    Pneumonia       0.77      0.97      0.86       194
-(ClientAppActor pid=23184)     accuracy                           0.67       756
-(ClientAppActor pid=23184)    macro avg       0.70      0.80      0.67       756
-(ClientAppActor pid=23184) weighted avg       0.84      0.67      0.69       756
-(ClientAppActor pid=23184) print net.val: Validation Loss: 0.7537, Accuracy: 0.6746
-(ClientAppActor pid=23144) test report              precision    recall  f1-score   support
-(ClientAppActor pid=23144)       Normal       0.82      0.84      0.83       100
-(ClientAppActor pid=23144) Tuberculosis       0.92      0.80      0.86       100
-(ClientAppActor pid=23144)    Pneumonia       0.90      0.99      0.94       100
-(ClientAppActor pid=23144)     accuracy                           0.88       300
-(ClientAppActor pid=23144)    macro avg       0.88      0.88      0.88       300
-(ClientAppActor pid=23144) weighted avg       0.88      0.88      0.88       300
-(ClientAppActor pid=23144) print client: Test Loss: 0.3027, Accuracy: 0.8767
-(ClientAppActor pid=23124) loading data [repeated 3x across cluster]
-(ClientAppActor pid=23124) loaded data [repeated 3x across cluster]
-(ClientAppActor pid=23144)  [repeated 3x across cluster]
+(ClientAppActor pid=4452) loading data
+(ClientAppActor pid=4452) loaded data
+(ClientAppActor pid=4452) val report
+(ClientAppActor pid=16080)               precision    recall  f1-score   support
+(ClientAppActor pid=16080)
+(ClientAppActor pid=16080)       Normal       0.97      0.79      0.87       443
+(ClientAppActor pid=16080) Tuberculosis       0.59      0.94      0.72       102
+(ClientAppActor pid=16080)    Pneumonia       0.89      0.98      0.93       211
+(ClientAppActor pid=16080)
+(ClientAppActor pid=16080)     accuracy                           0.86       756
+(ClientAppActor pid=16080)    macro avg       0.82      0.90      0.84       756
+(ClientAppActor pid=16080) weighted avg       0.90      0.86      0.87       756
+(ClientAppActor pid=16080)
+(ClientAppActor pid=16080) print client: Val Loss: 0.3385, Accuracy: 0.8624
+(ClientAppActor pid=16080) loading data [repeated 3x across cluster]
+(ClientAppActor pid=22376) loaded data [repeated 3x across cluster]
+(ClientAppActor pid=22376) val report [repeated 3x across cluster]
 INFO :      aggregate_evaluate: received 4 results and 0 failures
-WARNING :   No evaluate_metrics_aggregation_fn provided
+server_app.weighted_average: Client 0: Examples=756, Accuracy=0.8624
+server_app.weighted_average: Client 1: Examples=756, Accuracy=0.8624
+server_app.weighted_average: Client 2: Examples=757, Accuracy=0.8507
+server_app.weighted_average: Client 3: Examples=756, Accuracy=0.8730
 INFO :
 INFO :      [ROUND 2]
 INFO :      configure_fit: strategy sampled 4 clients (out of 4)
-(ClientAppActor pid=23124) C:\Users\14871\AppData\Local\Programs\Python\Python39\lib\site-packages\torchvision\models\_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead. [repeated 4x across cluster]
-(ClientAppActor pid=23124)   warnings.warn( [repeated 4x across cluster]
-(ClientAppActor pid=23124) C:\Users\14871\AppData\Local\Programs\Python\Python39\lib\site-packages\torchvision\models\_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=ResNet18_Weights.IMAGENET1K_V1`. You can also use `weights=ResNet18_Weights.DEFAULT` to get the most up-to-date weights. [repeated 4x across cluster]
-(ClientAppActor pid=23124)   warnings.warn(msg) [repeated 4x across cluster]
-(ClientAppActor pid=23132) print net.train: Epoch 1/1, Loss: 0.5422
-(ClientAppActor pid=23124) test report              precision    recall  f1-score   support [repeated 3x across cluster]
-(ClientAppActor pid=23124)       Normal       0.82      0.84      0.83       100 [repeated 3x across cluster]
-(ClientAppActor pid=23124) Tuberculosis       0.92      0.80      0.86       100 [repeated 3x across cluster]
-(ClientAppActor pid=23124)    Pneumonia       0.90      0.99      0.94       100 [repeated 3x across cluster]
-(ClientAppActor pid=23124)     accuracy                           0.88       300 [repeated 3x across cluster]
-(ClientAppActor pid=23124)    macro avg       0.88      0.88      0.88       300 [repeated 3x across cluster]
-(ClientAppActor pid=23124) weighted avg       0.88      0.88      0.88       300 [repeated 3x across cluster]
-(ClientAppActor pid=23124) print client: Test Loss: 0.3027, Accuracy: 0.8767 [repeated 3x across cluster]
-(ClientAppActor pid=23132) loading data [repeated 4x across cluster]
-(ClientAppActor pid=23132) loaded data [repeated 4x across cluster]
-(ClientAppActor pid=23124)  [repeated 9x across cluster]
-(ClientAppActor pid=23144) print net.train: Epoch 1/1, Loss: 0.4866
-(ClientAppActor pid=23124) print net.train: Epoch 1/1, Loss: 0.5760
-(ClientAppActor pid=23132) test report              precision    recall  f1-score   support
-(ClientAppActor pid=23132)
-(ClientAppActor pid=23132)       Normal       0.96      0.89      0.92       462
-(ClientAppActor pid=23132) Tuberculosis       0.70      0.84      0.76        80
-(ClientAppActor pid=23132)    Pneumonia       0.91      0.97      0.94       215
-(ClientAppActor pid=23132)
-(ClientAppActor pid=23132)     accuracy                           0.91       757
-(ClientAppActor pid=23132)    macro avg       0.85      0.90      0.87       757
-(ClientAppActor pid=23132) weighted avg       0.92      0.91      0.91       757
-(ClientAppActor pid=23132)
-(ClientAppActor pid=23132) print net.val: Validation Loss: 0.2295, Accuracy: 0.9089
-(ClientAppActor pid=23184) print net.train: Epoch 1/1, Loss: 0.4884
-(ClientAppActor pid=23124) test report              precision    recall  f1-score   support
-(ClientAppActor pid=23124)  [repeated 3x across cluster]
-(ClientAppActor pid=23124)       Normal       0.97      0.72      0.83       445
-(ClientAppActor pid=23124) Tuberculosis       0.40      0.95      0.57        80
-(ClientAppActor pid=23124)    Pneumonia       0.93      0.95      0.94       231
-(ClientAppActor pid=23124)     accuracy                           0.82       756
-(ClientAppActor pid=23124)    macro avg       0.77      0.87      0.78       756
-(ClientAppActor pid=23124) weighted avg       0.90      0.82      0.83       756
-(ClientAppActor pid=23124) print net.val: Validation Loss: 0.4808, Accuracy: 0.8161
-(ClientAppActor pid=23144) test report              precision    recall  f1-score   support
-(ClientAppActor pid=23144)       Normal       0.90      0.96      0.93       460
-(ClientAppActor pid=23144) Tuberculosis       0.83      0.68      0.75       102
-(ClientAppActor pid=23144)    Pneumonia       0.96      0.90      0.93       194
-(ClientAppActor pid=23144)     accuracy                           0.90       756
-(ClientAppActor pid=23144)    macro avg       0.90      0.84      0.87       756
-(ClientAppActor pid=23144) weighted avg       0.90      0.90      0.90       756
-(ClientAppActor pid=23144) print net.val: Validation Loss: 0.2494, Accuracy: 0.9048
+(ClientAppActor pid=14160) print net.train: Epoch 1/1, Loss: 0.4054
+(ClientAppActor pid=22376)               precision    recall  f1-score   support [repeated 3x across cluster]
+(ClientAppActor pid=22376)  [repeated 9x across cluster]
+(ClientAppActor pid=22376)       Normal       0.96      0.79      0.87       459 [repeated 3x across cluster]
+(ClientAppActor pid=22376) Tuberculosis       0.52      0.91      0.66        92 [repeated 3x across cluster]
+(ClientAppActor pid=22376)    Pneumonia       0.91      0.97      0.94       206 [repeated 3x across cluster]
+(ClientAppActor pid=22376)     accuracy                           0.85       757 [repeated 3x across cluster]
+(ClientAppActor pid=22376)    macro avg       0.80      0.89      0.82       757 [repeated 3x across cluster]
+(ClientAppActor pid=22376) weighted avg       0.89      0.85      0.86       757 [repeated 3x across cluster]
+(ClientAppActor pid=22376) print client: Val Loss: 0.3681, Accuracy: 0.8507 [repeated 3x across cluster]
+(ClientAppActor pid=22376) loading data [repeated 4x across cluster]
+(ClientAppActor pid=22376) loaded data [repeated 4x across cluster]
+(ClientAppActor pid=4452) print net.train: Epoch 1/1, Loss: 0.4676 [repeated 3x across cluster]
+(ClientAppActor pid=14160)               precision    recall  f1-score   support
+(ClientAppActor pid=14160)
+(ClientAppActor pid=14160)       Normal       0.97      0.80      0.88       443
+(ClientAppActor pid=14160) Tuberculosis       0.55      0.97      0.70       102
+(ClientAppActor pid=14160)    Pneumonia       0.95      0.95      0.95       211
+(ClientAppActor pid=14160)
+(ClientAppActor pid=14160)     accuracy                           0.87       756
+(ClientAppActor pid=14160)    macro avg       0.82      0.91      0.84       756
+(ClientAppActor pid=14160) weighted avg       0.91      0.87      0.87       756
+(ClientAppActor pid=14160)
+(ClientAppActor pid=14160) print net.val: Validation Loss: 0.3623, Accuracy: 0.8651
+(ClientAppActor pid=16080)               precision    recall  f1-score   support [repeated 2x across cluster]
+(ClientAppActor pid=16080)  [repeated 6x across cluster]
+(ClientAppActor pid=16080)       Normal       0.89      0.96      0.92       459 [repeated 2x across cluster]
+(ClientAppActor pid=16080) Tuberculosis       0.84      0.51      0.64        92 [repeated 2x across cluster]
+(ClientAppActor pid=16080)    Pneumonia       0.94      0.96      0.95       206 [repeated 2x across cluster]
+(ClientAppActor pid=16080)     accuracy                           0.90       757 [repeated 2x across cluster]
+(ClientAppActor pid=16080)    macro avg       0.89      0.81      0.84       757 [repeated 2x across cluster]
+(ClientAppActor pid=16080) weighted avg       0.90      0.90      0.90       757 [repeated 2x across cluster]
+(ClientAppActor pid=16080) print net.val: Validation Loss: 0.2497, Accuracy: 0.9022 [repeated 2x across cluster]       
 INFO :      aggregate_fit: received 4 results and 0 failures
-C:\Users\14871\AppData\Local\Programs\Python\Python39\lib\site-packages\torchvision\models\_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
-  warnings.warn(
-C:\Users\14871\AppData\Local\Programs\Python\Python39\lib\site-packages\torchvision\models\_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=ResNet18_Weights.IMAGENET1K_V1`. You can also use `weights=ResNet18_Weights.DEFAULT` to get the most up-to-date weights.
-  warnings.warn(msg)
-2server test              precision    recall  f1-score   support
+server round 2 server test              precision    recall  f1-score   support
 
-      Normal       0.86      0.90      0.88       100
-Tuberculosis       0.93      0.88      0.90       100
-   Pneumonia       0.97      0.97      0.97       100
+      Normal       0.81      0.92      0.86       100
+Tuberculosis       0.94      0.80      0.86       100
+   Pneumonia       0.95      0.96      0.96       100
 
-    accuracy                           0.92       300
-   macro avg       0.92      0.92      0.92       300
-weighted avg       0.92      0.92      0.92       300
+    accuracy                           0.89       300
+   macro avg       0.90      0.89      0.89       300
+weighted avg       0.90      0.89      0.89       300
 
-INFO :      fit progress: (2, 0.2889157123863697, {'accuracy': 0.9166666666666666, 'loss': 0.2889157123863697}, 983.7038898)
+INFO :      fit progress: (2, 0.26213783025741577, {'accuracy': 0.8933333333333333, 'loss': 0.26213783025741577}, 763.5549325)
 INFO :      configure_evaluate: strategy sampled 4 clients (out of 4)
-(ClientAppActor pid=23184) C:\Users\14871\AppData\Local\Programs\Python\Python39\lib\site-packages\torchvision\models\_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead. [repeated 4x across cluster]
-(ClientAppActor pid=23184)   warnings.warn( [repeated 4x across cluster]
-(ClientAppActor pid=23184) C:\Users\14871\AppData\Local\Programs\Python\Python39\lib\site-packages\torchvision\models\_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=ResNet18_Weights.IMAGENET1K_V1`. You can also use `weights=ResNet18_Weights.DEFAULT` to get the most up-to-date weights. [repeated 4x across cluster]
-(ClientAppActor pid=23184)   warnings.warn(msg) [repeated 4x across cluster]
-(ClientAppActor pid=23184) loading data
-(ClientAppActor pid=23184) loaded data
-(ClientAppActor pid=23184)  [repeated 6x across cluster]
-(ClientAppActor pid=23184) test report              precision    recall  f1-score   support
-(ClientAppActor pid=23184)       Normal       0.95      0.92      0.93       448
-(ClientAppActor pid=23184) Tuberculosis       0.75      0.80      0.77        81
-(ClientAppActor pid=23184)    Pneumonia       0.93      0.97      0.95       227
-(ClientAppActor pid=23184)     accuracy                           0.92       756
-(ClientAppActor pid=23184)    macro avg       0.88      0.90      0.88       756
-(ClientAppActor pid=23184) weighted avg       0.92      0.92      0.92       756
-(ClientAppActor pid=23184) print net.val: Validation Loss: 0.1950, Accuracy: 0.9193
-(ClientAppActor pid=23184) test report              precision    recall  f1-score   support
-(ClientAppActor pid=23184)       Normal       0.86      0.90      0.88       100
-(ClientAppActor pid=23184) Tuberculosis       0.93      0.88      0.90       100
-(ClientAppActor pid=23184)    Pneumonia       0.97      0.97      0.97       100
-(ClientAppActor pid=23184)     accuracy                           0.92       300
-(ClientAppActor pid=23184)    macro avg       0.92      0.92      0.92       300
-(ClientAppActor pid=23184) weighted avg       0.92      0.92      0.92       300
-(ClientAppActor pid=23184) print client: Test Loss: 0.2889, Accuracy: 0.9167
-(ClientAppActor pid=23124) loading data [repeated 3x across cluster]
-(ClientAppActor pid=23124) loaded data [repeated 3x across cluster]
-(ClientAppActor pid=23184)  [repeated 3x across cluster]
+(ClientAppActor pid=4452) loading data
+(ClientAppActor pid=4452) loaded data
+(ClientAppActor pid=4452)               precision    recall  f1-score   support
+(ClientAppActor pid=4452)  [repeated 3x across cluster]
+(ClientAppActor pid=4452)       Normal       0.98      0.82      0.89       436
+(ClientAppActor pid=4452) Tuberculosis       0.62      0.92      0.74        98
+(ClientAppActor pid=4452)    Pneumonia       0.90      0.99      0.94       222
+(ClientAppActor pid=4452)     accuracy                           0.88       756
+(ClientAppActor pid=4452)    macro avg       0.83      0.91      0.86       756
+(ClientAppActor pid=4452) weighted avg       0.91      0.88      0.89       756
+(ClientAppActor pid=4452) print net.val: Validation Loss: 0.2921, Accuracy: 0.8836
+(ClientAppActor pid=4452) val report
+(ClientAppActor pid=22376)               precision    recall  f1-score   support
+(ClientAppActor pid=22376)       Normal       0.95      0.91      0.93       443
+(ClientAppActor pid=22376) Tuberculosis       0.77      0.84      0.80       102
+(ClientAppActor pid=22376)    Pneumonia       0.93      0.97      0.95       211
+(ClientAppActor pid=22376)     accuracy                           0.91       756
+(ClientAppActor pid=22376)    macro avg       0.88      0.91      0.89       756
+(ClientAppActor pid=22376) weighted avg       0.92      0.91      0.91       756
+(ClientAppActor pid=22376) print client: Val Loss: 0.2165, Accuracy: 0.9140
+(ClientAppActor pid=22376) loading data [repeated 3x across cluster]
+(ClientAppActor pid=22376) loaded data [repeated 3x across cluster]
+(ClientAppActor pid=22376)  [repeated 3x across cluster]
+(ClientAppActor pid=22376) val report [repeated 3x across cluster]
 INFO :      aggregate_evaluate: received 4 results and 0 failures
+server_app.weighted_average: Client 0: Examples=756, Accuracy=0.9233
+server_app.weighted_average: Client 1: Examples=756, Accuracy=0.9233
+server_app.weighted_average: Client 2: Examples=756, Accuracy=0.9140
+server_app.weighted_average: Client 3: Examples=757, Accuracy=0.9022
 INFO :
 INFO :      [ROUND 3]
 INFO :      configure_fit: strategy sampled 4 clients (out of 4)
-(ClientAppActor pid=23132) C:\Users\14871\AppData\Local\Programs\Python\Python39\lib\site-packages\torchvision\models\_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead. [repeated 4x across cluster]
-(ClientAppActor pid=23132)   warnings.warn( [repeated 4x across cluster]
-(ClientAppActor pid=23132) C:\Users\14871\AppData\Local\Programs\Python\Python39\lib\site-packages\torchvision\models\_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=ResNet18_Weights.IMAGENET1K_V1`. You can also use `weights=ResNet18_Weights.DEFAULT` to get the most up-to-date weights. [repeated 4x across cluster]
-(ClientAppActor pid=23132)   warnings.warn(msg) [repeated 4x across cluster]
-(ClientAppActor pid=23124) print net.train: Epoch 1/1, Loss: 0.4415
-(ClientAppActor pid=23132) test report              precision    recall  f1-score   support [repeated 3x across cluster]
-(ClientAppActor pid=23132)       Normal       0.86      0.90      0.88       100 [repeated 3x across cluster]
-(ClientAppActor pid=23132) Tuberculosis       0.93      0.88      0.90       100 [repeated 3x across cluster]
-(ClientAppActor pid=23132)    Pneumonia       0.97      0.97      0.97       100 [repeated 3x across cluster]
-(ClientAppActor pid=23132)     accuracy                           0.92       300 [repeated 3x across cluster]
-(ClientAppActor pid=23132)    macro avg       0.92      0.92      0.92       300 [repeated 3x across cluster]
-(ClientAppActor pid=23132) weighted avg       0.92      0.92      0.92       300 [repeated 3x across cluster]
-(ClientAppActor pid=23132) print client: Test Loss: 0.2889, Accuracy: 0.9167 [repeated 3x across cluster]
-(ClientAppActor pid=23144) loading data [repeated 4x across cluster]
-(ClientAppActor pid=23144) loaded data [repeated 4x across cluster]
-(ClientAppActor pid=23132)  [repeated 9x across cluster]
-(ClientAppActor pid=23184) print net.train: Epoch 1/1, Loss: 0.4380
-(ClientAppActor pid=23132) print net.train: Epoch 1/1, Loss: 0.4221
-(ClientAppActor pid=23124) test report              precision    recall  f1-score   support
-(ClientAppActor pid=23124)
-(ClientAppActor pid=23124)       Normal       0.96      0.89      0.92       462
-(ClientAppActor pid=23124) Tuberculosis       0.64      0.88      0.74        80
-(ClientAppActor pid=23124)    Pneumonia       0.93      0.96      0.94       215
-(ClientAppActor pid=23124)
-(ClientAppActor pid=23124)     accuracy                           0.90       757
-(ClientAppActor pid=23124)    macro avg       0.84      0.91      0.87       757
-(ClientAppActor pid=23124) weighted avg       0.92      0.90      0.91       757
-(ClientAppActor pid=23124)
-(ClientAppActor pid=23124) print net.val: Validation Loss: 0.2631, Accuracy: 0.9049
-(ClientAppActor pid=23144) print net.train: Epoch 1/1, Loss: 0.4287
-(ClientAppActor pid=23132) test report              precision    recall  f1-score   support
-(ClientAppActor pid=23132)  [repeated 3x across cluster]
-(ClientAppActor pid=23132)       Normal       0.97      0.87      0.92       445
-(ClientAppActor pid=23132) Tuberculosis       0.79      0.88      0.83        80
-(ClientAppActor pid=23132)    Pneumonia       0.85      0.99      0.91       231
-(ClientAppActor pid=23132)     accuracy                           0.91       756
-(ClientAppActor pid=23132)    macro avg       0.87      0.91      0.89       756
-(ClientAppActor pid=23132) weighted avg       0.92      0.91      0.91       756
-(ClientAppActor pid=23132) print net.val: Validation Loss: 0.2716, Accuracy: 0.9074
-(ClientAppActor pid=23184) test report              precision    recall  f1-score   support
-(ClientAppActor pid=23184)       Normal       0.92      0.88      0.90       460
-(ClientAppActor pid=23184) Tuberculosis       0.61      0.90      0.73       102
-(ClientAppActor pid=23184)    Pneumonia       0.97      0.84      0.90       194
-(ClientAppActor pid=23184)     accuracy                           0.87       756
-(ClientAppActor pid=23184)    macro avg       0.83      0.87      0.84       756
-(ClientAppActor pid=23184) weighted avg       0.89      0.87      0.88       756
-(ClientAppActor pid=23184) print net.val: Validation Loss: 0.3181, Accuracy: 0.8704
+(ClientAppActor pid=14160) print net.train: Epoch 1/1, Loss: 0.4424
+(ClientAppActor pid=16080)               precision    recall  f1-score   support [repeated 3x across cluster]
+(ClientAppActor pid=16080)       Normal       0.93      0.91      0.92       459 [repeated 3x across cluster]
+(ClientAppActor pid=16080) Tuberculosis       0.68      0.77      0.72        92 [repeated 3x across cluster]
+(ClientAppActor pid=16080)    Pneumonia       0.95      0.95      0.95       206 [repeated 3x across cluster]
+(ClientAppActor pid=16080)     accuracy                           0.90       757 [repeated 3x across cluster]
+(ClientAppActor pid=16080)    macro avg       0.85      0.88      0.86       757 [repeated 3x across cluster]
+(ClientAppActor pid=16080) weighted avg       0.91      0.90      0.90       757 [repeated 3x across cluster]
+(ClientAppActor pid=16080) print client: Val Loss: 0.2346, Accuracy: 0.9022 [repeated 3x across cluster]
+(ClientAppActor pid=22376) loading data [repeated 4x across cluster]
+(ClientAppActor pid=22376) loaded data [repeated 4x across cluster]
+(ClientAppActor pid=16080)  [repeated 9x across cluster]
+(ClientAppActor pid=22376) print net.train: Epoch 1/1, Loss: 0.4152 [repeated 3x across cluster]
+(ClientAppActor pid=14160)               precision    recall  f1-score   support
+(ClientAppActor pid=14160)
+(ClientAppActor pid=14160)       Normal       0.97      0.81      0.88       443
+(ClientAppActor pid=14160) Tuberculosis       0.54      0.95      0.69       102
+(ClientAppActor pid=14160)    Pneumonia       0.95      0.93      0.94       211
+(ClientAppActor pid=14160)
+(ClientAppActor pid=14160)     accuracy                           0.86       756
+(ClientAppActor pid=14160)    macro avg       0.82      0.90      0.84       756
+(ClientAppActor pid=14160) weighted avg       0.90      0.86      0.87       756
+(ClientAppActor pid=14160)
+(ClientAppActor pid=14160) print net.val: Validation Loss: 0.3877, Accuracy: 0.8624
+(ClientAppActor pid=22376)               precision    recall  f1-score   support [repeated 3x across cluster]
+(ClientAppActor pid=22376)  [repeated 9x across cluster]
+(ClientAppActor pid=22376)       Normal       0.97      0.89      0.93       436 [repeated 3x across cluster]
+(ClientAppActor pid=22376) Tuberculosis       0.71      0.90      0.79        98 [repeated 3x across cluster]
+(ClientAppActor pid=22376)    Pneumonia       0.95      0.99      0.97       222 [repeated 3x across cluster]
+(ClientAppActor pid=22376)     accuracy                           0.92       756 [repeated 3x across cluster]
+(ClientAppActor pid=22376)    macro avg       0.88      0.93      0.90       756 [repeated 3x across cluster]
+(ClientAppActor pid=22376) weighted avg       0.93      0.92      0.92       756 [repeated 3x across cluster]
+(ClientAppActor pid=22376) print net.val: Validation Loss: 0.2009, Accuracy: 0.9206 [repeated 3x across cluster]       
 INFO :      aggregate_fit: received 4 results and 0 failures
-C:\Users\14871\AppData\Local\Programs\Python\Python39\lib\site-packages\torchvision\models\_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
-  warnings.warn(
-C:\Users\14871\AppData\Local\Programs\Python\Python39\lib\site-packages\torchvision\models\_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=ResNet18_Weights.IMAGENET1K_V1`. You can also use `weights=ResNet18_Weights.DEFAULT` to get the most up-to-date weights.
-  warnings.warn(msg)
-3server test              precision    recall  f1-score   support
+server round 3 server test              precision    recall  f1-score   support
 
-      Normal       0.87      0.89      0.88       100
-Tuberculosis       0.90      0.91      0.91       100
-   Pneumonia       0.98      0.95      0.96       100
+      Normal       0.84      0.87      0.86       100
+Tuberculosis       0.86      0.89      0.88       100
+   Pneumonia       0.99      0.93      0.96       100
 
-    accuracy                           0.92       300
-   macro avg       0.92      0.92      0.92       300
-weighted avg       0.92      0.92      0.92       300
+    accuracy                           0.90       300
+   macro avg       0.90      0.90      0.90       300
+weighted avg       0.90      0.90      0.90       300
 
-INFO :      fit progress: (3, 0.27531215623021127, {'accuracy': 0.9166666666666666, 'loss': 0.27531215623021127}, 1462.5103273)
+INFO :      fit progress: (3, 0.2483348585665226, {'accuracy': 0.8966666666666666, 'loss': 0.2483348585665226}, 1172.6793035)
 INFO :      configure_evaluate: strategy sampled 4 clients (out of 4)
-(ClientAppActor pid=23184) C:\Users\14871\AppData\Local\Programs\Python\Python39\lib\site-packages\torchvision\models\_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead. [repeated 4x across cluster]
-(ClientAppActor pid=23184)   warnings.warn( [repeated 4x across cluster]
-(ClientAppActor pid=23184) C:\Users\14871\AppData\Local\Programs\Python\Python39\lib\site-packages\torchvision\models\_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=ResNet18_Weights.IMAGENET1K_V1`. You can also use `weights=ResNet18_Weights.DEFAULT` to get the most up-to-date weights. [repeated 4x across cluster]
-(ClientAppActor pid=23184)   warnings.warn(msg) [repeated 4x across cluster]
-(ClientAppActor pid=23184) loading data
-(ClientAppActor pid=23144)  [repeated 6x across cluster]
-(ClientAppActor pid=23144) test report              precision    recall  f1-score   support
-(ClientAppActor pid=23144)       Normal       0.98      0.67      0.79       448
-(ClientAppActor pid=23144) Tuberculosis       0.34      0.99      0.51        81
-(ClientAppActor pid=23144)    Pneumonia       0.97      0.93      0.95       227
-(ClientAppActor pid=23144)     accuracy                           0.78       756
-(ClientAppActor pid=23144)    macro avg       0.76      0.86      0.75       756
-(ClientAppActor pid=23144) weighted avg       0.91      0.78      0.81       756
-(ClientAppActor pid=23144) print net.val: Validation Loss: 0.6484, Accuracy: 0.7791
-(ClientAppActor pid=23144) loaded data
-(ClientAppActor pid=23184) test report              precision    recall  f1-score   support
-(ClientAppActor pid=23184)       Normal       0.87      0.89      0.88       100
-(ClientAppActor pid=23184) Tuberculosis       0.90      0.91      0.91       100
-(ClientAppActor pid=23184)    Pneumonia       0.98      0.95      0.96       100
-(ClientAppActor pid=23184)     accuracy                           0.92       300
-(ClientAppActor pid=23184)    macro avg       0.92      0.92      0.92       300
-(ClientAppActor pid=23184) weighted avg       0.92      0.92      0.92       300
-(ClientAppActor pid=23184) print client: Test Loss: 0.2753, Accuracy: 0.9167
-(ClientAppActor pid=23124) loading data [repeated 3x across cluster]
-(ClientAppActor pid=23184)  [repeated 3x across cluster]
-(ClientAppActor pid=23124) loaded data [repeated 3x across cluster]
+(ClientAppActor pid=22376) loading data
+(ClientAppActor pid=22376) loaded data
+(ClientAppActor pid=22376) val report
+(ClientAppActor pid=22376)               precision    recall  f1-score   support
+(ClientAppActor pid=22376)
+(ClientAppActor pid=22376)       Normal       0.96      0.78      0.86       443
+(ClientAppActor pid=22376) Tuberculosis       0.52      0.95      0.67       102
+(ClientAppActor pid=22376)    Pneumonia       0.96      0.95      0.95       211
+(ClientAppActor pid=22376)
+(ClientAppActor pid=22376)     accuracy                           0.85       756
+(ClientAppActor pid=22376)    macro avg       0.81      0.89      0.83       756
+(ClientAppActor pid=22376) weighted avg       0.90      0.85      0.86       756
+(ClientAppActor pid=22376)
+(ClientAppActor pid=22376) print client: Val Loss: 0.3612, Accuracy: 0.8519
+(ClientAppActor pid=16080) loading data [repeated 3x across cluster]
+(ClientAppActor pid=16080) loaded data [repeated 3x across cluster]
+(ClientAppActor pid=16080) val report [repeated 3x across cluster]
 INFO :      aggregate_evaluate: received 4 results and 0 failures
+server_app.weighted_average: Client 0: Examples=757, Accuracy=0.8666
+server_app.weighted_average: Client 1: Examples=756, Accuracy=0.8704
+server_app.weighted_average: Client 2: Examples=756, Accuracy=0.8519
+server_app.weighted_average: Client 3: Examples=756, Accuracy=0.8690
 INFO :
 INFO :      [SUMMARY]
-INFO :      Run finished 3 round(s) in 1493.71s
+INFO :      Run finished 3 round(s) in 1229.57s
 INFO :          History (loss, distributed):
-INFO :                  round 1: 0.30271400827914474
-INFO :                  round 2: 0.2889157123863697
-INFO :                  round 3: 0.27531215623021127
+INFO :                  round 1: 0.3403120270260602
+INFO :                  round 2: 0.21183927565967003
+INFO :                  round 3: 0.3556865672916995
 INFO :          History (loss, centralized):
-INFO :                  round 0: 1.2131219029426574
-INFO :                  round 1: 0.30271400827914474
-INFO :                  round 2: 0.2889157123863697
-INFO :                  round 3: 0.27531215623021127
+INFO :                  round 0: 1.1662945032119751
+INFO :                  round 1: 0.26619805321097373
+INFO :                  round 2: 0.26213783025741577
+INFO :                  round 3: 0.2483348585665226
+INFO :          History (metrics, distributed, evaluate):
+INFO :          {'accuracy': [(1, 0.8621487603305785),
+INFO :                        (2, 0.915702479338843),
+INFO :                        (3, 0.8644628099173554)]}
 INFO :          History (metrics, centralized):
-INFO :          {'accuracy': [(0, 0.18),
-INFO :                        (1, 0.8766666666666667),
-INFO :                        (2, 0.9166666666666666),
-INFO :                        (3, 0.9166666666666666)],
-INFO :           'loss': [(0, 1.2131219029426574),
-INFO :                    (1, 0.30271400827914474),
-INFO :                    (2, 0.2889157123863697),
-INFO :                    (3, 0.27531215623021127)]}
+INFO :          {'accuracy': [(0, 0.26666666666666666),
+INFO :                        (1, 0.8733333333333333),
+INFO :                        (2, 0.8933333333333333),
+INFO :                        (3, 0.8966666666666666)],
+INFO :           'loss': [(0, 1.1662945032119751),
+INFO :                    (1, 0.26619805321097373),
+INFO :                    (2, 0.26213783025741577),
+INFO :                    (3, 0.2483348585665226)]}
 INFO :
-(ClientAppActor pid=23132) test report              precision    recall  f1-score   support [repeated 3x across cluster]
-(ClientAppActor pid=23132)       Normal       0.87      0.89      0.88       100 [repeated 3x across cluster]
-(ClientAppActor pid=23132) Tuberculosis       0.90      0.91      0.91       100 [repeated 3x across cluster]
-(ClientAppActor pid=23132)    Pneumonia       0.98      0.95      0.96       100 [repeated 3x across cluster]
-(ClientAppActor pid=23132)     accuracy                           0.92       300 [repeated 3x across cluster]
-(ClientAppActor pid=23132)    macro avg       0.92      0.92      0.92       300 [repeated 3x across cluster]
-(ClientAppActor pid=23132) weighted avg       0.92      0.92      0.92       300 [repeated 3x across cluster]
-(ClientAppActor pid=23132) print client: Test Loss: 0.2753, Accuracy: 0.9167 [repeated 3x across cluster]
+(ClientAppActor pid=4452)               precision    recall  f1-score   support [repeated 3x across cluster]
+(ClientAppActor pid=4452)  [repeated 9x across cluster]
+(ClientAppActor pid=4452)       Normal       0.96      0.82      0.88       459 [repeated 3x across cluster]
+(ClientAppActor pid=4452) Tuberculosis       0.51      0.95      0.67        92 [repeated 3x across cluster]
+(ClientAppActor pid=4452)    Pneumonia       0.97      0.94      0.96       206 [repeated 3x across cluster]
+(ClientAppActor pid=4452)     accuracy                           0.87       757 [repeated 3x across cluster]
+(ClientAppActor pid=4452)    macro avg       0.82      0.90      0.84       757 [repeated 3x across cluster]
+(ClientAppActor pid=4452) weighted avg       0.91      0.87      0.88       757 [repeated 3x across cluster]
+(ClientAppActor pid=4452) print client: Val Loss: 0.3844, Accuracy: 0.8666 [repeated 3x across cluster]
