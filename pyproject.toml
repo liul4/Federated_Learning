@@ -3,7 +3,7 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "flower-project"
+name = "imbalanced"
 version = "1.0.0"
 description = ""
 license = "Apache-2.0"
@@ -21,8 +21,8 @@ packages = ["."]
 publisher = "liu"
 
 [tool.flwr.app.components]
-serverapp = "flower_project.server_app:app"
-clientapp = "flower_project.client_app:app"
+serverapp = "imbalanced.server_app:app"
+clientapp = "imbalanced.client_app:app"
 
 [tool.flwr.app.config]
 num-server-rounds = 3
