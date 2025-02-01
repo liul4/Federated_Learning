@@ -89,3 +89,11 @@ def load_data(partition_id: int, num_partitions: int, batch_size: int):
     testloader = DataLoader(test_dataset, batch_size=batch_size)
     
     return trainloader, valloader, testloader
+
+
+"""
+def load_test_data(batch_size: int):
+    test_dataset = torch.load("testset.pt")
+    testloader = DataLoader(test_dataset, batch_size=batch_size)
+    return testloader
+"""
