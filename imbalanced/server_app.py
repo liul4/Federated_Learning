@@ -34,27 +34,6 @@ def evaluate_fn(server_round, parameters_ndarrays, config):
     else:
         loss, accuracy = test(global_model, valloader, device)
         print(f"Server Round {server_round} Val Accuracy: {accuracy:.4f}")
-    """
-    criterion = torch.nn.CrossEntropyLoss().to(device) # add to device
-    all_labels, all_preds = [], []
-    correct, loss = 0, 0.0
-    global_model.eval()
-    with torch.no_grad():
-        for batch in testloader:
-            images = batch["img"].to(device)
-            labels = batch["label"].to(device)
-            outputs = global_model(images)
-            loss += criterion(outputs, labels).item()
-            correct += (torch.max(outputs.data, 1)[1] == labels).sum().item()
-            preds = torch.max(outputs.data, 1)[1]
-            all_labels.extend(labels.cpu().numpy())
-            all_preds.extend(preds.cpu().numpy())
-    report = classification_report(all_labels, all_preds, target_names=["Normal", "Tuberculosis", "Pneumonia"])
-    #print("server round " + str(server_round) + " server test" + report)
-    accuracy = correct / len(testloader.dataset)
-    print("server round " + str(server_round) + " test accurracy" + accuracy)
-    loss = loss / len(testloader)
-    """
     return loss, {"accuracy": accuracy, "loss": loss}
 
 
