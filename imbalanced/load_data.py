@@ -3,8 +3,6 @@ import os
 from torch.utils.data import DataLoader, ConcatDataset, random_split, Dataset
 from torchvision.transforms import Compose, Normalize, ToTensor, Resize
 from sklearn.model_selection import train_test_split
-from torch.utils.data import Subset
-import pickle
 import torch
 
 
@@ -72,28 +70,16 @@ for i, _ in enumerate(partitions):
     torch.save(test_dataset, "testset.pt")
 
 
-def load_data(partition_id: int, num_partitions: int, batch_size: int):
-    #train_name = "C:/Users/14871/Desktop/newFolder/24-25-1/Federated_Learning/train"+ str(partition_id) +"dataset.pt"
+def load_data(partition_id: int, batch_size: int):
     train_name = "train" + str(partition_id)+"dataset.pt"
     val_name = "val" + str(partition_id)+"dataset.pt"
-    #val_name = "C:/Users/14871/Desktop/newFolder/24-25-1/Federated_Learning/val" + str(partition_id)+"dataset.pt"
-
+  
     partition_train = torch.load(train_name)
     partition_val = torch.load(val_name)
-    #test_dataset = torch.load("C:/Users/14871/Desktop/newFolder/24-25-1/Federated_Learning/testset.pt")
-    test_dataset = torch.load("testset.pt")
 
-    # Create DataLoaders for train, validation, and test
+    # Create DataLoaders for train, validation
     trainloader = DataLoader(partition_train, batch_size=batch_size, shuffle=True)
     valloader = DataLoader(partition_val, batch_size=batch_size)
     testloader = DataLoader(test_dataset, batch_size=batch_size)
-    
+
     return trainloader, valloader, testloader
-
-
-"""
-def load_test_data(batch_size: int):
-    test_dataset = torch.load("testset.pt")
-    testloader = DataLoader(test_dataset, batch_size=batch_size)
-    return testloader
-"""
