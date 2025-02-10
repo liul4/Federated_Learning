@@ -69,7 +69,8 @@ def client_fn(context: Context):
     num_partitions = context.node_config["num-partitions"]
     batch_size = context.run_config["batch-size"]
     print("loading data")
-    trainloader, valloader, testloader = load_data(partition_id, num_partitions, batch_size)
+    #trainloader, valloader, testloader = load_data(partition_id, num_partitions, batch_size)
+    trainloader, valloader, testloader = load_data(partition_id, batch_size)
     print("loaded data")
     local_epochs = context.run_config["local-epochs"]
     learning_rate = context.run_config["learning-rate"]
