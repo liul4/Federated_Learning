@@ -10,6 +10,7 @@ import torch.nn as nn
 import torch.nn.functional as F
 from torchvision.models import densenet121, resnet18
 from torchvision.models import ResNet18_Weights
+from imbalanced.loss import FocalLoss
 
 
 class Net(nn.Module):
@@ -122,7 +123,8 @@ def train(net, trainloader, valloader, epochs, learning_rate, device):
     labels = [sample["label"] for sample in trainloader.dataset]
     class_weights = compute_class_weight('balanced', classes=np.unique(labels), y=labels)
     class_weights = torch.tensor(class_weights, dtype=torch.float32).to(device)
-    criterion = torch.nn.CrossEntropyLoss(weight=class_weights)
+    #criterion = torch.nn.CrossEntropyLoss(weight=class_weights)
+    criterion = FocalLoss(class_num=3, gamma=2)
     optimizer = torch.optim.Adam(net.parameters(), lr=learning_rate)
     # optimizer = torch.optim.SGD(net.parameters(), lr=learning_rate, momentum=0.9)
     net.train()
@@ -152,7 +154,8 @@ def train(net, trainloader, valloader, epochs, learning_rate, device):
 def test(net, testloader, device):
     """Validate the model on the test set."""
     net.to(device)
-    criterion = torch.nn.CrossEntropyLoss().to(device) # add to device
+    #criterion = torch.nn.CrossEntropyLoss().to(device) # add to device
+    criterion = FocalLoss(class_num=3, gamma=2)
     all_labels, all_preds = [], []
     correct, loss = 0, 0.0
     net.eval()
