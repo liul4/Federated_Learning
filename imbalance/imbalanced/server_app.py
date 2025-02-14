@@ -5,9 +5,8 @@ from typing import List, Tuple
 from flwr.common import Context, Metrics, ndarrays_to_parameters
 from flwr.server import ServerApp, ServerAppComponents, ServerConfig
 from flwr.server.strategy import FedAvg
-from imbalanced.net import Net, get_weights, set_weights, test
+from imbalanced.net import Net, get_weights, set_weights, global_test
 import torch
-from sklearn.metrics import classification_report
 from imbalanced.load_data import load_data
 import random
 
@@ -28,11 +27,11 @@ def evaluate_fn(server_round, parameters_ndarrays, config):
     global_model.to(device)
 
     if server_round == num_rounds:
-        loss, accuracy = test(global_model, testloader, device)
+        loss, accuracy = global_test(global_model, testloader, device)
         print(f"Server Round {server_round} Test Accuracy: {accuracy:.4f}")
 
     else:
-        loss, accuracy = test(global_model, valloader, device)
+        loss, accuracy = global_test(global_model, valloader, device)
         print(f"Server Round {server_round} Val Accuracy: {accuracy:.4f}")
     return loss, {"accuracy": accuracy, "loss": loss}
 
