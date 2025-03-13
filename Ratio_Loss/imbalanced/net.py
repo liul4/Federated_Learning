@@ -55,7 +55,7 @@ def train(net, trainloader, valloader, epochs, learning_rate, device):
     labels = [sample["label"] for sample in trainloader.dataset]
     class_weights = compute_class_weight('balanced', classes=np.unique(labels), y=labels)
     class_weights = torch.tensor(class_weights, dtype=torch.float32).to(device)
-    criterion = RatioLoss(class_num=3, alpha=class_weights)
+    criterion = RatioLoss(class_num=3, alpha=None) # use default value of alpha
     optimizer = torch.optim.Adam(net.parameters(), lr=learning_rate)
     # optimizer = torch.optim.SGD(net.parameters(), lr=learning_rate, momentum=0.9)
     net.train()
