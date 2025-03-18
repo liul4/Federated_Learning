@@ -1,0 +1,1240 @@
+Loading project configuration... 
+Success
+processing data
+processed data
+INFO :      Starting Flower ServerApp, config: num_rounds=10, no round_timeout
+INFO :      
+INFO :      [INIT]
+INFO :      Using initial global parameters provided by strategy
+INFO :      Starting evaluation of initial global parameters
+loading data
+loaded data
+              precision    recall  f1-score   support
+
+      Normal       0.66      0.58      0.62       610
+Tuberculosis       0.09      0.35      0.15        97
+   Pneumonia       0.00      0.00      0.00       193
+
+    accuracy                           0.43       900
+   macro avg       0.25      0.31      0.26       900
+weighted avg       0.46      0.43      0.43       900
+
+Server Round 0 Test Accuracy: 0.4311 class accuracy:{'Normal': 0.580327868852459, 'Tuberculosis': 0.35051546391752575, 'Pneumonia': 0.0} 
+INFO :      initial parameters (loss, other metrics): 1.091202906493483, {'accuracy': 0.4311111111111111, 'loss': 1.091202906493483}     
+INFO :
+INFO :      [ROUND 1]
+INFO :      configure_fit: strategy sampled 4 clients (out of 4)
+(ClientAppActor pid=38796) processing data
+(ClientAppActor pid=38796) processed data
+(ClientAppActor pid=13884) loading data
+(ClientAppActor pid=13884) loaded data
+(ClientAppActor pid=38796) print net.train: Epoch 1/1, Loss: 16.0603
+(ClientAppActor pid=18716) processing data [repeated 3x across cluster] (Ray deduplicates logs by default. Set RAY_DEDUP_LOGS=0 to disable log deduplication, or see https://docs.ray.io/en/master/ray-observability/ray-logging.html#log-deduplication for more options.)        
+(ClientAppActor pid=18716) processed data [repeated 3x across cluster]
+(ClientAppActor pid=18716) loading data [repeated 3x across cluster]
+(ClientAppActor pid=18716) loaded data [repeated 3x across cluster]
+(ClientAppActor pid=38796)               precision    recall  f1-score   support
+(ClientAppActor pid=38796) 
+(ClientAppActor pid=38796)       Normal       0.97      0.93      0.95       334
+(ClientAppActor pid=38796) Tuberculosis       0.86      0.86      0.86        57
+(ClientAppActor pid=38796)    Pneumonia       0.92      0.98      0.95       214
+(ClientAppActor pid=38796)
+(ClientAppActor pid=38796)     accuracy                           0.94       605
+(ClientAppActor pid=38796)    macro avg       0.92      0.92      0.92       605
+(ClientAppActor pid=38796) weighted avg       0.94      0.94      0.94       605
+(ClientAppActor pid=38796)
+(ClientAppActor pid=38796) print net.val: Validation Loss: 0.1870, Accuracy: 0.9405
+(ClientAppActor pid=18716) print net.train: Epoch 1/1, Loss: 12.4118
+(ClientAppActor pid=18716)               precision    recall  f1-score   support
+(ClientAppActor pid=18716) 
+(ClientAppActor pid=18716)       Normal       0.84      0.99      0.91       417
+(ClientAppActor pid=18716) Tuberculosis       0.98      0.51      0.67       123
+(ClientAppActor pid=18716)    Pneumonia       0.99      0.87      0.92       160
+(ClientAppActor pid=18716)
+(ClientAppActor pid=18716)     accuracy                           0.88       700
+(ClientAppActor pid=18716)    macro avg       0.94      0.79      0.84       700
+(ClientAppActor pid=18716) weighted avg       0.90      0.88      0.87       700
+(ClientAppActor pid=18716)
+(ClientAppActor pid=18716) print net.val: Validation Loss: 0.3449, Accuracy: 0.8800
+(ClientAppActor pid=13884) print net.train: Epoch 1/1, Loss: 14.1706
+(ClientAppActor pid=12320) print net.train: Epoch 1/1, Loss: 10.3957
+(ClientAppActor pid=13884)               precision    recall  f1-score   support
+(ClientAppActor pid=13884) 
+(ClientAppActor pid=13884)       Normal       0.97      0.85      0.91       509
+(ClientAppActor pid=13884) Tuberculosis       0.55      0.96      0.70        92
+(ClientAppActor pid=13884)    Pneumonia       0.96      0.95      0.95       219
+(ClientAppActor pid=13884)
+(ClientAppActor pid=13884)     accuracy                           0.89       820
+(ClientAppActor pid=13884)    macro avg       0.83      0.92      0.85       820
+(ClientAppActor pid=13884) weighted avg       0.92      0.89      0.90       820
+(ClientAppActor pid=13884)
+(ClientAppActor pid=13884) print net.val: Validation Loss: 0.3539, Accuracy: 0.8866
+(ClientAppActor pid=12320)               precision    recall  f1-score   support
+(ClientAppActor pid=12320)  [repeated 3x across cluster]
+(ClientAppActor pid=12320)       Normal       0.92      0.98      0.95       603
+(ClientAppActor pid=12320) Tuberculosis       0.95      0.59      0.73       106
+(ClientAppActor pid=12320)    Pneumonia       0.95      0.97      0.96       191
+(ClientAppActor pid=12320)     accuracy                           0.93       900
+(ClientAppActor pid=12320)    macro avg       0.94      0.85      0.88       900
+(ClientAppActor pid=12320) weighted avg       0.93      0.93      0.93       900
+(ClientAppActor pid=12320) print net.val: Validation Loss: 0.1938, Accuracy: 0.9322
+INFO :      aggregate_fit: received 4 results and 0 failures
+WARNING :   No fit_metrics_aggregation_fn provided
+loading data
+loaded data
+              precision    recall  f1-score   support
+
+      Normal       0.69      1.00      0.81       610
+Tuberculosis       0.00      0.00      0.00        97
+   Pneumonia       1.00      0.05      0.10       193
+
+    accuracy                           0.69       900
+   macro avg       0.56      0.35      0.30       900
+weighted avg       0.68      0.69      0.57       900
+
+Server Round 1 Test Accuracy: 0.6889 class accuracy:{'Normal': 1.0, 'Tuberculosis': 0.0, 'Pneumonia': 0.05181347150259067}
+INFO :      fit progress: (1, 0.7156829864814364, {'accuracy': 0.6888888888888889, 'loss': 0.7156829864814364}, 655.6598712)
+INFO :      configure_evaluate: strategy sampled 4 clients (out of 4)
+(ClientAppActor pid=12320) loading data
+(ClientAppActor pid=12320) loaded data
+(ClientAppActor pid=13884)               precision    recall  f1-score   support
+(ClientAppActor pid=13884) 
+(ClientAppActor pid=13884)       Normal       0.55      1.00      0.71       323
+(ClientAppActor pid=13884) Tuberculosis       0.00      0.00      0.00        62
+(ClientAppActor pid=13884)    Pneumonia       1.00      0.08      0.14       220
+(ClientAppActor pid=13884)
+(ClientAppActor pid=13884)     accuracy                           0.56       605
+(ClientAppActor pid=13884)    macro avg       0.52      0.36      0.28       605
+(ClientAppActor pid=13884) weighted avg       0.66      0.56      0.43       605
+(ClientAppActor pid=13884)
+(ClientAppActor pid=13884) print client: Val Loss: 0.8416, Accuracy: 0.5620
+(ClientAppActor pid=38796) loading data [repeated 3x across cluster]
+(ClientAppActor pid=38796) loaded data [repeated 3x across cluster]
+(ClientAppActor pid=12320)               precision    recall  f1-score   support
+(ClientAppActor pid=12320)  [repeated 3x across cluster]
+(ClientAppActor pid=12320)       Normal       0.57      1.00      0.73       395
+(ClientAppActor pid=12320) Tuberculosis       0.00      0.00      0.00       111
+(ClientAppActor pid=12320)    Pneumonia       1.00      0.05      0.10       194
+(ClientAppActor pid=12320)     accuracy                           0.58       700
+(ClientAppActor pid=12320)    macro avg       0.52      0.35      0.28       700
+(ClientAppActor pid=12320) weighted avg       0.60      0.58      0.44       700
+(ClientAppActor pid=12320) print client: Val Loss: 0.8528, Accuracy: 0.5786
+(ClientAppActor pid=18716)               precision    recall  f1-score   support
+(ClientAppActor pid=18716)       Normal       0.62      1.00      0.77       499
+(ClientAppActor pid=18716) Tuberculosis       0.00      0.00      0.00        85
+(ClientAppActor pid=18716)    Pneumonia       1.00      0.09      0.16       236
+(ClientAppActor pid=18716)     accuracy                           0.63       820
+(ClientAppActor pid=18716)    macro avg       0.54      0.36      0.31       820
+(ClientAppActor pid=18716) weighted avg       0.67      0.63      0.51       820
+(ClientAppActor pid=18716) print client: Val Loss: 0.7637, Accuracy: 0.6341
+INFO :      aggregate_evaluate: received 4 results and 0 failures
+server_app.weighted_average: Client 0: Examples=900, Accuracy=0.6622
+server_app.weighted_average: Client 1: Examples=820, Accuracy=0.6341
+server_app.weighted_average: Client 2: Examples=605, Accuracy=0.5620
+server_app.weighted_average: Client 3: Examples=700, Accuracy=0.5786
+INFO :
+INFO :      [ROUND 2]
+INFO :      configure_fit: strategy sampled 4 clients (out of 4)
+(ClientAppActor pid=38796)  [repeated 6x across cluster]
+(ClientAppActor pid=38796) loading data
+(ClientAppActor pid=38796) loaded data
+(ClientAppActor pid=38796)               precision    recall  f1-score   support
+(ClientAppActor pid=38796)       Normal       0.66      1.00      0.79       581
+(ClientAppActor pid=38796) Tuberculosis       0.00      0.00      0.00        98
+(ClientAppActor pid=38796)    Pneumonia       1.00      0.07      0.13       221
+(ClientAppActor pid=38796)     accuracy                           0.66       900
+(ClientAppActor pid=38796)    macro avg       0.55      0.36      0.31       900
+(ClientAppActor pid=38796) weighted avg       0.67      0.66      0.54       900
+(ClientAppActor pid=38796) print client: Val Loss: 0.7300, Accuracy: 0.6622
+(ClientAppActor pid=18716) print net.train: Epoch 1/1, Loss: 9.0337
+(ClientAppActor pid=13884) loading data [repeated 3x across cluster]
+(ClientAppActor pid=13884) loaded data [repeated 3x across cluster]
+(ClientAppActor pid=18716)               precision    recall  f1-score   support
+(ClientAppActor pid=18716) 
+(ClientAppActor pid=18716)       Normal       0.92      0.98      0.95       312
+(ClientAppActor pid=18716) Tuberculosis       0.92      0.66      0.77        70
+(ClientAppActor pid=18716)    Pneumonia       0.97      0.97      0.97       223
+(ClientAppActor pid=18716)
+(ClientAppActor pid=18716)     accuracy                           0.94       605
+(ClientAppActor pid=18716)    macro avg       0.94      0.87      0.89       605
+(ClientAppActor pid=18716) weighted avg       0.94      0.94      0.93       605
+(ClientAppActor pid=18716)
+(ClientAppActor pid=18716) print net.val: Validation Loss: 0.2478, Accuracy: 0.9372
+(ClientAppActor pid=13884) print net.train: Epoch 1/1, Loss: 10.0417
+(ClientAppActor pid=13884)               precision    recall  f1-score   support
+(ClientAppActor pid=13884) 
+(ClientAppActor pid=13884)       Normal       0.90      0.98      0.94       405
+(ClientAppActor pid=13884) Tuberculosis       0.90      0.83      0.86       115
+(ClientAppActor pid=13884)    Pneumonia       0.99      0.86      0.92       180
+(ClientAppActor pid=13884)
+(ClientAppActor pid=13884)     accuracy                           0.92       700
+(ClientAppActor pid=13884)    macro avg       0.93      0.89      0.91       700
+(ClientAppActor pid=13884) weighted avg       0.93      0.92      0.92       700
+(ClientAppActor pid=13884)
+(ClientAppActor pid=13884) print net.val: Validation Loss: 0.2343, Accuracy: 0.9229
+(ClientAppActor pid=12320) print net.train: Epoch 1/1, Loss: 8.6866
+(ClientAppActor pid=38796) print net.train: Epoch 1/1, Loss: 9.2249
+(ClientAppActor pid=12320)               precision    recall  f1-score   support
+(ClientAppActor pid=12320) 
+(ClientAppActor pid=12320)       Normal       0.93      0.99      0.96       499
+(ClientAppActor pid=12320) Tuberculosis       0.98      0.66      0.79        80
+(ClientAppActor pid=12320)    Pneumonia       0.98      0.95      0.96       241
+(ClientAppActor pid=12320)
+(ClientAppActor pid=12320)     accuracy                           0.95       820
+(ClientAppActor pid=12320)    macro avg       0.96      0.87      0.90       820
+(ClientAppActor pid=12320) weighted avg       0.95      0.95      0.94       820
+(ClientAppActor pid=12320)
+(ClientAppActor pid=12320) print net.val: Validation Loss: 0.1988, Accuracy: 0.9451
+(ClientAppActor pid=38796)               precision    recall  f1-score   support
+(ClientAppActor pid=38796)  [repeated 3x across cluster]
+(ClientAppActor pid=38796)       Normal       0.94      0.93      0.94       581
+(ClientAppActor pid=38796) Tuberculosis       0.71      0.98      0.82        98
+(ClientAppActor pid=38796)    Pneumonia       1.00      0.85      0.92       221
+(ClientAppActor pid=38796)     accuracy                           0.92       900
+(ClientAppActor pid=38796)    macro avg       0.88      0.92      0.89       900
+(ClientAppActor pid=38796) weighted avg       0.93      0.92      0.92       900
+(ClientAppActor pid=38796) print net.val: Validation Loss: 0.1874, Accuracy: 0.9178
+INFO :      aggregate_fit: received 4 results and 0 failures
+loading data
+loaded data
+              precision    recall  f1-score   support
+
+      Normal       0.86      0.99      0.92       397
+Tuberculosis       0.96      0.79      0.87       111
+   Pneumonia       1.00      0.78      0.87       192
+
+    accuracy                           0.90       700
+   macro avg       0.94      0.85      0.89       700
+weighted avg       0.91      0.90      0.90       700
+
+Server Round 2 Test Accuracy: 0.9029 class accuracy:{'Normal': 0.9949622166246851, 'Tuberculosis': 0.7927927927927928, 'Pneumonia': 0.7760416666666666}
+INFO :      fit progress: (2, 0.35720711201429367, {'accuracy': 0.9028571428571428, 'loss': 0.35720711201429367}, 1377.6460839000001)    
+INFO :      configure_evaluate: strategy sampled 4 clients (out of 4)
+(ClientAppActor pid=38796) loading data
+(ClientAppActor pid=38796) loaded data
+(ClientAppActor pid=13884)               precision    recall  f1-score   support
+(ClientAppActor pid=13884) 
+(ClientAppActor pid=13884)       Normal       0.86      0.98      0.92       323
+(ClientAppActor pid=13884) Tuberculosis       0.88      0.82      0.85        62
+(ClientAppActor pid=13884)    Pneumonia       1.00      0.81      0.90       220
+(ClientAppActor pid=13884)
+(ClientAppActor pid=13884)     accuracy                           0.91       605
+(ClientAppActor pid=13884)    macro avg       0.91      0.87      0.89       605
+(ClientAppActor pid=13884) weighted avg       0.92      0.91      0.90       605
+(ClientAppActor pid=13884)
+(ClientAppActor pid=13884) print client: Val Loss: 0.3556, Accuracy: 0.9058
+(ClientAppActor pid=18716) loading data [repeated 3x across cluster]
+(ClientAppActor pid=18716) loaded data [repeated 3x across cluster]
+(ClientAppActor pid=12320)               precision    recall  f1-score   support
+(ClientAppActor pid=12320)  [repeated 3x across cluster]
+(ClientAppActor pid=12320)       Normal       0.89      0.98      0.94       395
+(ClientAppActor pid=12320) Tuberculosis       0.93      0.90      0.92       111
+(ClientAppActor pid=12320)    Pneumonia       1.00      0.81      0.90       194
+(ClientAppActor pid=12320)     accuracy                           0.92       700
+(ClientAppActor pid=12320)    macro avg       0.94      0.90      0.92       700
+(ClientAppActor pid=12320) weighted avg       0.93      0.92      0.92       700
+(ClientAppActor pid=12320) print client: Val Loss: 0.3417, Accuracy: 0.9243
+(ClientAppActor pid=18716)               precision    recall  f1-score   support
+(ClientAppActor pid=18716)       Normal       0.91      0.98      0.95       499
+(ClientAppActor pid=18716) Tuberculosis       0.88      0.86      0.87        85
+(ClientAppActor pid=18716)    Pneumonia       1.00      0.84      0.91       236
+(ClientAppActor pid=18716)     accuracy                           0.93       820
+(ClientAppActor pid=18716)    macro avg       0.93      0.89      0.91       820
+(ClientAppActor pid=18716) weighted avg       0.93      0.93      0.93       820
+(ClientAppActor pid=18716) print client: Val Loss: 0.3266, Accuracy: 0.9293
+INFO :      aggregate_evaluate: received 4 results and 0 failures
+server_app.weighted_average: Client 0: Examples=900, Accuracy=0.9367
+server_app.weighted_average: Client 1: Examples=700, Accuracy=0.9243
+server_app.weighted_average: Client 2: Examples=820, Accuracy=0.9293
+server_app.weighted_average: Client 3: Examples=605, Accuracy=0.9058
+INFO :
+INFO :      [ROUND 3]
+INFO :      configure_fit: strategy sampled 4 clients (out of 4)
+(ClientAppActor pid=38796)  [repeated 6x across cluster]
+(ClientAppActor pid=18716) loading data
+(ClientAppActor pid=18716) loaded data
+(ClientAppActor pid=12320) print net.train: Epoch 1/1, Loss: 6.2265
+(ClientAppActor pid=38796)               precision    recall  f1-score   support
+(ClientAppActor pid=38796)       Normal       0.92      0.99      0.95       581
+(ClientAppActor pid=38796) Tuberculosis       0.95      0.91      0.93        98
+(ClientAppActor pid=38796)    Pneumonia       1.00      0.80      0.89       221
+(ClientAppActor pid=38796)     accuracy                           0.94       900
+(ClientAppActor pid=38796)    macro avg       0.95      0.90      0.92       900
+(ClientAppActor pid=38796) weighted avg       0.94      0.94      0.94       900
+(ClientAppActor pid=38796) print client: Val Loss: 0.3081, Accuracy: 0.9367
+(ClientAppActor pid=13884) loading data [repeated 3x across cluster]
+(ClientAppActor pid=13884) loaded data [repeated 3x across cluster]
+(ClientAppActor pid=12320)               precision    recall  f1-score   support
+(ClientAppActor pid=12320) 
+(ClientAppActor pid=12320)       Normal       0.94      0.97      0.96       325
+(ClientAppActor pid=12320) Tuberculosis       1.00      0.75      0.85        63
+(ClientAppActor pid=12320)    Pneumonia       0.96      0.98      0.97       217
+(ClientAppActor pid=12320)
+(ClientAppActor pid=12320)     accuracy                           0.95       605
+(ClientAppActor pid=12320)    macro avg       0.97      0.90      0.93       605
+(ClientAppActor pid=12320) weighted avg       0.95      0.95      0.95       605
+(ClientAppActor pid=12320)
+(ClientAppActor pid=12320) print net.val: Validation Loss: 0.1962, Accuracy: 0.9521
+(ClientAppActor pid=38796) print net.train: Epoch 1/1, Loss: 7.1536
+(ClientAppActor pid=38796)               precision    recall  f1-score   support
+(ClientAppActor pid=38796) 
+(ClientAppActor pid=38796)       Normal       0.98      0.91      0.94       417
+(ClientAppActor pid=38796) Tuberculosis       0.76      0.95      0.85       109
+(ClientAppActor pid=38796)    Pneumonia       0.97      0.98      0.98       174
+(ClientAppActor pid=38796)
+(ClientAppActor pid=38796)     accuracy                           0.93       700
+(ClientAppActor pid=38796)    macro avg       0.90      0.95      0.92       700
+(ClientAppActor pid=38796) weighted avg       0.94      0.93      0.94       700
+(ClientAppActor pid=38796)
+(ClientAppActor pid=38796) print net.val: Validation Loss: 0.1676, Accuracy: 0.9343
+(ClientAppActor pid=18716) print net.train: Epoch 1/1, Loss: 6.2386
+(ClientAppActor pid=13884) print net.train: Epoch 1/1, Loss: 6.5675
+(ClientAppActor pid=18716)               precision    recall  f1-score   support
+(ClientAppActor pid=18716) 
+(ClientAppActor pid=18716)       Normal       0.94      0.97      0.95       499
+(ClientAppActor pid=18716) Tuberculosis       0.83      0.81      0.82        85
+(ClientAppActor pid=18716)    Pneumonia       1.00      0.93      0.96       236
+(ClientAppActor pid=18716)
+(ClientAppActor pid=18716)     accuracy                           0.94       820
+(ClientAppActor pid=18716)    macro avg       0.92      0.90      0.91       820
+(ClientAppActor pid=18716) weighted avg       0.94      0.94      0.94       820
+(ClientAppActor pid=18716)
+(ClientAppActor pid=18716) print net.val: Validation Loss: 0.1361, Accuracy: 0.9427
+(ClientAppActor pid=13884)               precision    recall  f1-score   support
+(ClientAppActor pid=13884)  [repeated 3x across cluster]
+(ClientAppActor pid=13884)       Normal       0.97      0.98      0.98       598
+(ClientAppActor pid=13884) Tuberculosis       0.95      0.88      0.91       113
+(ClientAppActor pid=13884)    Pneumonia       0.96      0.98      0.97       189
+(ClientAppActor pid=13884)     accuracy                           0.97       900
+(ClientAppActor pid=13884)    macro avg       0.96      0.94      0.95       900
+(ClientAppActor pid=13884) weighted avg       0.97      0.97      0.97       900
+(ClientAppActor pid=13884) print net.val: Validation Loss: 0.1285, Accuracy: 0.9667
+INFO :      aggregate_fit: received 4 results and 0 failures
+loading data
+loaded data
+              precision    recall  f1-score   support
+
+      Normal       0.98      0.96      0.97       397
+Tuberculosis       0.88      0.95      0.92       111
+   Pneumonia       0.99      0.97      0.98       192
+
+    accuracy                           0.97       700
+   macro avg       0.95      0.96      0.96       700
+weighted avg       0.97      0.97      0.97       700
+
+Server Round 3 Test Accuracy: 0.9657 class accuracy:{'Normal': 0.964735516372796, 'Tuberculosis': 0.954954954954955, 'Pneumonia': 0.9739583333333334}
+INFO :      fit progress: (3, 0.11203464645553719, {'accuracy': 0.9657142857142857, 'loss': 0.11203464645553719}, 2088.5156030000003)    
+INFO :      configure_evaluate: strategy sampled 4 clients (out of 4)
+(ClientAppActor pid=18716) loading data
+(ClientAppActor pid=18716) loaded data
+(ClientAppActor pid=13884)               precision    recall  f1-score   support
+(ClientAppActor pid=13884) 
+(ClientAppActor pid=13884)       Normal       0.98      0.96      0.97       323
+(ClientAppActor pid=13884) Tuberculosis       0.84      0.95      0.89        62
+(ClientAppActor pid=13884)    Pneumonia       0.99      0.98      0.98       220
+(ClientAppActor pid=13884)
+(ClientAppActor pid=13884)     accuracy                           0.97       605
+(ClientAppActor pid=13884)    macro avg       0.94      0.96      0.95       605
+(ClientAppActor pid=13884) weighted avg       0.97      0.97      0.97       605
+(ClientAppActor pid=13884)
+(ClientAppActor pid=13884) print client: Val Loss: 0.1215, Accuracy: 0.9669
+(ClientAppActor pid=13884) loading data [repeated 3x across cluster]
+(ClientAppActor pid=13884) loaded data [repeated 3x across cluster]
+(ClientAppActor pid=38796)               precision    recall  f1-score   support
+(ClientAppActor pid=38796)  [repeated 3x across cluster]
+(ClientAppActor pid=38796)       Normal       0.99      0.96      0.97       417
+(ClientAppActor pid=38796) Tuberculosis       0.89      0.96      0.93       109
+(ClientAppActor pid=38796)    Pneumonia       0.99      0.99      0.99       174
+(ClientAppActor pid=38796)     accuracy                           0.97       700
+(ClientAppActor pid=38796)    macro avg       0.95      0.97      0.96       700
+(ClientAppActor pid=38796) weighted avg       0.97      0.97      0.97       700
+(ClientAppActor pid=38796) print client: Val Loss: 0.1153, Accuracy: 0.9700
+(ClientAppActor pid=12320)               precision    recall  f1-score   support
+(ClientAppActor pid=12320)       Normal       0.97      0.96      0.97       499
+(ClientAppActor pid=12320) Tuberculosis       0.83      0.90      0.86        80
+(ClientAppActor pid=12320)    Pneumonia       0.98      0.98      0.98       241
+(ClientAppActor pid=12320)     accuracy                           0.96       820
+(ClientAppActor pid=12320)    macro avg       0.93      0.95      0.94       820
+(ClientAppActor pid=12320) weighted avg       0.96      0.96      0.96       820
+(ClientAppActor pid=12320) print client: Val Loss: 0.1256, Accuracy: 0.9610
+(ClientAppActor pid=18716)  [repeated 6x across cluster]
+INFO :      aggregate_evaluate: received 4 results and 0 failures
+server_app.weighted_average: Client 0: Examples=900, Accuracy=0.9656
+server_app.weighted_average: Client 1: Examples=700, Accuracy=0.9700
+server_app.weighted_average: Client 2: Examples=820, Accuracy=0.9610
+server_app.weighted_average: Client 3: Examples=605, Accuracy=0.9669
+INFO :
+INFO :      [ROUND 4]
+INFO :      configure_fit: strategy sampled 4 clients (out of 4)
+(ClientAppActor pid=18716) loading data
+(ClientAppActor pid=18716) loaded data
+(ClientAppActor pid=12320) print net.train: Epoch 1/1, Loss: 4.7331
+(ClientAppActor pid=18716)               precision    recall  f1-score   support
+(ClientAppActor pid=18716)       Normal       0.98      0.97      0.97       589
+(ClientAppActor pid=18716) Tuberculosis       0.85      0.92      0.88       108
+(ClientAppActor pid=18716)    Pneumonia       0.99      0.98      0.99       203
+(ClientAppActor pid=18716)     accuracy                           0.97       900
+(ClientAppActor pid=18716)    macro avg       0.94      0.96      0.95       900
+(ClientAppActor pid=18716) weighted avg       0.97      0.97      0.97       900
+(ClientAppActor pid=18716) print client: Val Loss: 0.1121, Accuracy: 0.9656
+(ClientAppActor pid=13884) loading data [repeated 3x across cluster]
+(ClientAppActor pid=13884) loaded data [repeated 3x across cluster]
+(ClientAppActor pid=12320)               precision    recall  f1-score   support
+(ClientAppActor pid=12320) 
+(ClientAppActor pid=12320)       Normal       0.96      0.96      0.96       325
+(ClientAppActor pid=12320) Tuberculosis       0.98      0.79      0.88        63
+(ClientAppActor pid=12320)    Pneumonia       0.94      1.00      0.97       217
+(ClientAppActor pid=12320)
+(ClientAppActor pid=12320)     accuracy                           0.96       605
+(ClientAppActor pid=12320)    macro avg       0.96      0.92      0.94       605
+(ClientAppActor pid=12320) weighted avg       0.96      0.96      0.95       605
+(ClientAppActor pid=12320)
+(ClientAppActor pid=12320) print net.val: Validation Loss: 0.1551, Accuracy: 0.9554
+(ClientAppActor pid=13884) print net.train: Epoch 1/1, Loss: 6.3536
+(ClientAppActor pid=13884)               precision    recall  f1-score   support
+(ClientAppActor pid=13884) 
+(ClientAppActor pid=13884)       Normal       0.96      0.96      0.96       405
+(ClientAppActor pid=13884) Tuberculosis       0.88      0.95      0.91       115
+(ClientAppActor pid=13884)    Pneumonia       0.99      0.93      0.96       180
+(ClientAppActor pid=13884)
+(ClientAppActor pid=13884)     accuracy                           0.95       700
+(ClientAppActor pid=13884)    macro avg       0.94      0.95      0.94       700
+(ClientAppActor pid=13884) weighted avg       0.95      0.95      0.95       700
+(ClientAppActor pid=13884)
+(ClientAppActor pid=13884) print net.val: Validation Loss: 0.1481, Accuracy: 0.9514
+(ClientAppActor pid=38796) print net.train: Epoch 1/1, Loss: 5.7685
+(ClientAppActor pid=38796)               precision    recall  f1-score   support
+(ClientAppActor pid=38796) 
+(ClientAppActor pid=38796)       Normal       0.95      1.00      0.97       509
+(ClientAppActor pid=38796) Tuberculosis       0.99      0.81      0.89        91
+(ClientAppActor pid=38796)    Pneumonia       1.00      0.95      0.98       220
+(ClientAppActor pid=38796)
+(ClientAppActor pid=38796)     accuracy                           0.97       820
+(ClientAppActor pid=38796)    macro avg       0.98      0.92      0.95       820
+(ClientAppActor pid=38796) weighted avg       0.97      0.97      0.97       820
+(ClientAppActor pid=38796)
+(ClientAppActor pid=38796) print net.val: Validation Loss: 0.1156, Accuracy: 0.9659
+(ClientAppActor pid=18716) print net.train: Epoch 1/1, Loss: 4.9186
+(ClientAppActor pid=18716)               precision    recall  f1-score   support
+(ClientAppActor pid=18716)  [repeated 3x across cluster]
+(ClientAppActor pid=18716)       Normal       0.98      0.93      0.95       589
+(ClientAppActor pid=18716) Tuberculosis       0.70      0.93      0.80       108
+(ClientAppActor pid=18716)    Pneumonia       0.99      0.96      0.98       203
+(ClientAppActor pid=18716)     accuracy                           0.94       900
+(ClientAppActor pid=18716)    macro avg       0.89      0.94      0.91       900
+(ClientAppActor pid=18716) weighted avg       0.95      0.94      0.94       900
+(ClientAppActor pid=18716) print net.val: Validation Loss: 0.1774, Accuracy: 0.9367
+INFO :      aggregate_fit: received 4 results and 0 failures
+loading data
+loaded data
+              precision    recall  f1-score   support
+
+      Normal       0.99      0.98      0.98       610
+Tuberculosis       0.90      0.98      0.94        97
+   Pneumonia       0.98      0.98      0.98       193
+
+    accuracy                           0.98       900
+   macro avg       0.96      0.98      0.97       900
+weighted avg       0.98      0.98      0.98       900
+
+Server Round 4 Test Accuracy: 0.9778 class accuracy:{'Normal': 0.9770491803278688, 'Tuberculosis': 0.979381443298969, 'Pneumonia': 0.9792746113989638}
+INFO :      fit progress: (4, 0.09523257863675726, {'accuracy': 0.9777777777777777, 'loss': 0.09523257863675726}, 2815.9459653)
+INFO :      configure_evaluate: strategy sampled 4 clients (out of 4)
+(ClientAppActor pid=13884) loading data
+(ClientAppActor pid=13884) loaded data
+(ClientAppActor pid=13884)               precision    recall  f1-score   support
+(ClientAppActor pid=13884) 
+(ClientAppActor pid=13884)       Normal       0.97      0.96      0.97       323
+(ClientAppActor pid=13884) Tuberculosis       0.83      0.95      0.89        62
+(ClientAppActor pid=13884)    Pneumonia       0.99      0.98      0.98       220
+(ClientAppActor pid=13884)
+(ClientAppActor pid=13884)     accuracy                           0.96       605
+(ClientAppActor pid=13884)    macro avg       0.93      0.96      0.95       605
+(ClientAppActor pid=13884) weighted avg       0.97      0.96      0.96       605
+(ClientAppActor pid=13884)
+(ClientAppActor pid=13884) print client: Val Loss: 0.1250, Accuracy: 0.9636
+(ClientAppActor pid=12320) loading data [repeated 3x across cluster]
+(ClientAppActor pid=12320) loaded data [repeated 3x across cluster]
+(ClientAppActor pid=38796)               precision    recall  f1-score   support
+(ClientAppActor pid=38796)  [repeated 3x across cluster]
+(ClientAppActor pid=38796)       Normal       0.98      0.96      0.97       417
+(ClientAppActor pid=38796) Tuberculosis       0.89      0.94      0.91       109
+(ClientAppActor pid=38796)    Pneumonia       0.98      0.99      0.98       174
+(ClientAppActor pid=38796)     accuracy                           0.96       700
+(ClientAppActor pid=38796)    macro avg       0.95      0.96      0.96       700
+(ClientAppActor pid=38796) weighted avg       0.96      0.96      0.96       700
+(ClientAppActor pid=38796) print client: Val Loss: 0.1234, Accuracy: 0.9643
+(ClientAppActor pid=12320)               precision    recall  f1-score   support
+(ClientAppActor pid=12320)       Normal       0.98      0.97      0.98       499
+(ClientAppActor pid=12320) Tuberculosis       0.86      0.94      0.90        80
+(ClientAppActor pid=12320)    Pneumonia       0.98      0.98      0.98       241
+(ClientAppActor pid=12320)     accuracy                           0.97       820
+(ClientAppActor pid=12320)    macro avg       0.94      0.96      0.95       820
+(ClientAppActor pid=12320) weighted avg       0.97      0.97      0.97       820
+(ClientAppActor pid=12320) print client: Val Loss: 0.1273, Accuracy: 0.9695
+INFO :      aggregate_evaluate: received 4 results and 0 failures
+server_app.weighted_average: Client 0: Examples=820, Accuracy=0.9695
+server_app.weighted_average: Client 1: Examples=700, Accuracy=0.9643
+server_app.weighted_average: Client 2: Examples=605, Accuracy=0.9636
+server_app.weighted_average: Client 3: Examples=900, Accuracy=0.9700
+INFO :
+INFO :      [ROUND 5]
+INFO :      configure_fit: strategy sampled 4 clients (out of 4)
+(ClientAppActor pid=18716)  [repeated 6x across cluster]
+(ClientAppActor pid=18716) loading data
+(ClientAppActor pid=18716) loaded data
+(ClientAppActor pid=18716)               precision    recall  f1-score   support
+(ClientAppActor pid=18716)       Normal       0.98      0.98      0.98       589
+(ClientAppActor pid=18716) Tuberculosis       0.89      0.91      0.90       108
+(ClientAppActor pid=18716)    Pneumonia       0.99      0.98      0.99       203
+(ClientAppActor pid=18716)     accuracy                           0.97       900
+(ClientAppActor pid=18716)    macro avg       0.95      0.96      0.95       900
+(ClientAppActor pid=18716) weighted avg       0.97      0.97      0.97       900
+(ClientAppActor pid=18716) print client: Val Loss: 0.1220, Accuracy: 0.9700
+(ClientAppActor pid=13884) print net.train: Epoch 1/1, Loss: 4.6599
+(ClientAppActor pid=13884) loading data [repeated 3x across cluster]
+(ClientAppActor pid=13884) loaded data [repeated 3x across cluster]
+(ClientAppActor pid=13884)               precision    recall  f1-score   support
+(ClientAppActor pid=13884) 
+(ClientAppActor pid=13884)       Normal       0.92      0.99      0.96       323
+(ClientAppActor pid=13884) Tuberculosis       1.00      0.68      0.81        62
+(ClientAppActor pid=13884)    Pneumonia       0.98      0.96      0.97       220
+(ClientAppActor pid=13884)
+(ClientAppActor pid=13884)     accuracy                           0.95       605
+(ClientAppActor pid=13884)    macro avg       0.97      0.88      0.91       605
+(ClientAppActor pid=13884) weighted avg       0.95      0.95      0.95       605
+(ClientAppActor pid=13884)
+(ClientAppActor pid=13884) print net.val: Validation Loss: 0.2140, Accuracy: 0.9488
+(ClientAppActor pid=18716) print net.train: Epoch 1/1, Loss: 4.5560
+(ClientAppActor pid=18716)               precision    recall  f1-score   support
+(ClientAppActor pid=18716) 
+(ClientAppActor pid=18716)       Normal       0.96      0.99      0.97       417
+(ClientAppActor pid=18716) Tuberculosis       0.96      0.89      0.93       123
+(ClientAppActor pid=18716)    Pneumonia       0.99      0.97      0.98       160
+(ClientAppActor pid=18716)
+(ClientAppActor pid=18716)     accuracy                           0.97       700
+(ClientAppActor pid=18716)    macro avg       0.97      0.95      0.96       700
+(ClientAppActor pid=18716) weighted avg       0.97      0.97      0.97       700
+(ClientAppActor pid=18716)
+(ClientAppActor pid=18716) print net.val: Validation Loss: 0.0793, Accuracy: 0.9671
+(ClientAppActor pid=12320) print net.train: Epoch 1/1, Loss: 4.1821
+(ClientAppActor pid=12320)               precision    recall  f1-score   support
+(ClientAppActor pid=12320) 
+(ClientAppActor pid=12320)       Normal       0.97      0.98      0.97       499
+(ClientAppActor pid=12320) Tuberculosis       0.97      0.86      0.91        80
+(ClientAppActor pid=12320)    Pneumonia       0.96      0.98      0.97       241
+(ClientAppActor pid=12320)
+(ClientAppActor pid=12320)     accuracy                           0.97       820
+(ClientAppActor pid=12320)    macro avg       0.97      0.94      0.95       820
+(ClientAppActor pid=12320) weighted avg       0.97      0.97      0.97       820
+(ClientAppActor pid=12320)
+(ClientAppActor pid=12320) print net.val: Validation Loss: 0.1098, Accuracy: 0.9659
+(ClientAppActor pid=38796) print net.train: Epoch 1/1, Loss: 4.1167
+(ClientAppActor pid=38796)               precision    recall  f1-score   support
+(ClientAppActor pid=38796)  [repeated 3x across cluster]
+(ClientAppActor pid=38796)       Normal       0.99      0.98      0.99       581
+(ClientAppActor pid=38796) Tuberculosis       0.90      0.97      0.94        98
+(ClientAppActor pid=38796)    Pneumonia       1.00      0.98      0.99       221
+(ClientAppActor pid=38796)     accuracy                           0.98       900
+(ClientAppActor pid=38796)    macro avg       0.96      0.98      0.97       900
+(ClientAppActor pid=38796) weighted avg       0.98      0.98      0.98       900
+(ClientAppActor pid=38796) print net.val: Validation Loss: 0.0675, Accuracy: 0.9800
+INFO :      aggregate_fit: received 4 results and 0 failures
+loading data
+loaded data
+              precision    recall  f1-score   support
+
+      Normal       0.98      0.98      0.98       397
+Tuberculosis       0.95      0.95      0.95       111
+   Pneumonia       0.98      0.99      0.99       192
+
+    accuracy                           0.98       700
+   macro avg       0.97      0.98      0.98       700
+weighted avg       0.98      0.98      0.98       700
+
+Server Round 5 Test Accuracy: 0.9800 class accuracy:{'Normal': 0.9798488664987406, 'Tuberculosis': 0.954954954954955, 'Pneumonia': 0.9947916666666666}
+INFO :      fit progress: (5, 0.07627178008922121, {'accuracy': 0.98, 'loss': 0.07627178008922121}, 3537.8799017)
+INFO :      configure_evaluate: strategy sampled 4 clients (out of 4)
+(ClientAppActor pid=38796) loading data
+(ClientAppActor pid=38796) loaded data
+(ClientAppActor pid=18716)               precision    recall  f1-score   support
+(ClientAppActor pid=18716) 
+(ClientAppActor pid=18716)       Normal       0.98      0.96      0.97       312
+(ClientAppActor pid=18716) Tuberculosis       0.90      0.93      0.92        70
+(ClientAppActor pid=18716)    Pneumonia       0.98      1.00      0.99       223
+(ClientAppActor pid=18716)
+(ClientAppActor pid=18716)     accuracy                           0.97       605
+(ClientAppActor pid=18716)    macro avg       0.95      0.96      0.96       605
+(ClientAppActor pid=18716) weighted avg       0.97      0.97      0.97       605
+(ClientAppActor pid=18716)
+(ClientAppActor pid=18716) print client: Val Loss: 0.0792, Accuracy: 0.9719
+(ClientAppActor pid=18716) loading data [repeated 3x across cluster]
+(ClientAppActor pid=18716) loaded data [repeated 3x across cluster]
+(ClientAppActor pid=13884)               precision    recall  f1-score   support
+(ClientAppActor pid=13884)  [repeated 3x across cluster]
+(ClientAppActor pid=13884)       Normal       0.98      0.99      0.98       405
+(ClientAppActor pid=13884) Tuberculosis       0.96      0.95      0.95       115
+(ClientAppActor pid=13884)    Pneumonia       0.99      0.99      0.99       180
+(ClientAppActor pid=13884)     accuracy                           0.98       700
+(ClientAppActor pid=13884)    macro avg       0.98      0.98      0.98       700
+(ClientAppActor pid=13884) weighted avg       0.98      0.98      0.98       700
+(ClientAppActor pid=13884) print client: Val Loss: 0.0678, Accuracy: 0.9814
+(ClientAppActor pid=12320)               precision    recall  f1-score   support
+(ClientAppActor pid=12320)       Normal       0.99      0.97      0.98       499
+(ClientAppActor pid=12320) Tuberculosis       0.91      0.96      0.93        80
+(ClientAppActor pid=12320)    Pneumonia       0.97      0.99      0.98       241
+(ClientAppActor pid=12320)     accuracy                           0.98       820
+(ClientAppActor pid=12320)    macro avg       0.96      0.97      0.96       820
+(ClientAppActor pid=12320) weighted avg       0.98      0.98      0.98       820
+(ClientAppActor pid=12320) print client: Val Loss: 0.0817, Accuracy: 0.9756
+(ClientAppActor pid=38796)  [repeated 6x across cluster]
+INFO :      aggregate_evaluate: received 4 results and 0 failures
+server_app.weighted_average: Client 0: Examples=605, Accuracy=0.9719
+server_app.weighted_average: Client 1: Examples=700, Accuracy=0.9814
+server_app.weighted_average: Client 2: Examples=820, Accuracy=0.9756
+server_app.weighted_average: Client 3: Examples=900, Accuracy=0.9844
+INFO :
+INFO :      [ROUND 6]
+INFO :      configure_fit: strategy sampled 4 clients (out of 4)
+(ClientAppActor pid=38796) loading data
+(ClientAppActor pid=38796) loaded data
+(ClientAppActor pid=38796) print net.train: Epoch 1/1, Loss: 3.2975
+(ClientAppActor pid=38796)               precision    recall  f1-score   support
+(ClientAppActor pid=38796)       Normal       0.99      0.98      0.99       581
+(ClientAppActor pid=38796) Tuberculosis       0.95      0.99      0.97        98
+(ClientAppActor pid=38796)    Pneumonia       0.98      0.99      0.98       221
+(ClientAppActor pid=38796)     accuracy                           0.98       900
+(ClientAppActor pid=38796)    macro avg       0.97      0.99      0.98       900
+(ClientAppActor pid=38796) weighted avg       0.98      0.98      0.98       900
+(ClientAppActor pid=38796) print client: Val Loss: 0.0595, Accuracy: 0.9844
+(ClientAppActor pid=18716) loading data [repeated 3x across cluster]
+(ClientAppActor pid=18716) loaded data [repeated 3x across cluster]
+(ClientAppActor pid=38796)               precision    recall  f1-score   support
+(ClientAppActor pid=38796) 
+(ClientAppActor pid=38796)       Normal       0.96      0.99      0.97       334
+(ClientAppActor pid=38796) Tuberculosis       0.96      0.95      0.96        57
+(ClientAppActor pid=38796)    Pneumonia       0.99      0.95      0.97       214
+(ClientAppActor pid=38796)
+(ClientAppActor pid=38796)     accuracy                           0.97       605
+(ClientAppActor pid=38796)    macro avg       0.97      0.96      0.97       605
+(ClientAppActor pid=38796) weighted avg       0.97      0.97      0.97       605
+(ClientAppActor pid=38796)
+(ClientAppActor pid=38796) print net.val: Validation Loss: 0.0831, Accuracy: 0.9719
+(ClientAppActor pid=12320) print net.train: Epoch 1/1, Loss: 4.0150
+(ClientAppActor pid=12320)               precision    recall  f1-score   support
+(ClientAppActor pid=12320) 
+(ClientAppActor pid=12320)       Normal       0.99      0.97      0.98       395
+(ClientAppActor pid=12320) Tuberculosis       0.92      0.99      0.96       111
+(ClientAppActor pid=12320)    Pneumonia       0.99      0.98      0.99       194
+(ClientAppActor pid=12320)
+(ClientAppActor pid=12320)     accuracy                           0.98       700
+(ClientAppActor pid=12320)    macro avg       0.97      0.98      0.97       700
+(ClientAppActor pid=12320) weighted avg       0.98      0.98      0.98       700
+(ClientAppActor pid=12320)
+(ClientAppActor pid=12320) print net.val: Validation Loss: 0.0763, Accuracy: 0.9786
+(ClientAppActor pid=13884) print net.train: Epoch 1/1, Loss: 4.7374
+(ClientAppActor pid=13884)               precision    recall  f1-score   support
+(ClientAppActor pid=13884) 
+(ClientAppActor pid=13884)       Normal       0.99      0.96      0.98       509
+(ClientAppActor pid=13884) Tuberculosis       0.82      0.95      0.88        92
+(ClientAppActor pid=13884)    Pneumonia       0.99      0.99      0.99       219
+(ClientAppActor pid=13884)
+(ClientAppActor pid=13884)     accuracy                           0.97       820
+(ClientAppActor pid=13884)    macro avg       0.93      0.96      0.95       820
+(ClientAppActor pid=13884) weighted avg       0.97      0.97      0.97       820
+(ClientAppActor pid=13884)
+(ClientAppActor pid=13884) print net.val: Validation Loss: 0.0878, Accuracy: 0.9671
+(ClientAppActor pid=18716) print net.train: Epoch 1/1, Loss: 2.9041
+(ClientAppActor pid=18716)               precision    recall  f1-score   support
+(ClientAppActor pid=18716)  [repeated 3x across cluster]
+(ClientAppActor pid=18716)       Normal       0.99      0.98      0.98       589
+(ClientAppActor pid=18716) Tuberculosis       0.93      0.93      0.93       108
+(ClientAppActor pid=18716)    Pneumonia       0.98      1.00      0.99       203
+(ClientAppActor pid=18716)     accuracy                           0.98       900
+(ClientAppActor pid=18716)    macro avg       0.97      0.97      0.97       900
+(ClientAppActor pid=18716) weighted avg       0.98      0.98      0.98       900
+(ClientAppActor pid=18716) print net.val: Validation Loss: 0.0959, Accuracy: 0.9789
+INFO :      aggregate_fit: received 4 results and 0 failures
+loading data
+loaded data
+              precision    recall  f1-score   support
+
+      Normal       0.99      0.98      0.99       610
+Tuberculosis       0.90      0.99      0.94        97
+   Pneumonia       0.98      0.99      0.99       193
+
+    accuracy                           0.98       900
+   macro avg       0.96      0.99      0.97       900
+weighted avg       0.98      0.98      0.98       900
+
+Server Round 6 Test Accuracy: 0.9811 class accuracy:{'Normal': 0.9770491803278688, 'Tuberculosis': 0.9896907216494846, 'Pneumonia': 0.9896373056994818}
+INFO :      fit progress: (6, 0.06000739140917772, {'accuracy': 0.9811111111111112, 'loss': 0.06000739140917772}, 4250.5258084)
+INFO :      configure_evaluate: strategy sampled 4 clients (out of 4)
+(ClientAppActor pid=18716) loading data
+(ClientAppActor pid=18716) loaded data
+(ClientAppActor pid=18716)               precision    recall  f1-score   support
+(ClientAppActor pid=18716) 
+(ClientAppActor pid=18716)       Normal       0.99      0.95      0.97       312
+(ClientAppActor pid=18716) Tuberculosis       0.86      0.96      0.91        70
+(ClientAppActor pid=18716)    Pneumonia       0.97      1.00      0.99       223
+(ClientAppActor pid=18716)
+(ClientAppActor pid=18716)     accuracy                           0.97       605
+(ClientAppActor pid=18716)    macro avg       0.94      0.97      0.95       605
+(ClientAppActor pid=18716) weighted avg       0.97      0.97      0.97       605
+(ClientAppActor pid=18716)
+(ClientAppActor pid=18716) print client: Val Loss: 0.0784, Accuracy: 0.9669
+(ClientAppActor pid=38796) loading data [repeated 3x across cluster]
+(ClientAppActor pid=38796) loaded data [repeated 3x across cluster]
+(ClientAppActor pid=12320)               precision    recall  f1-score   support
+(ClientAppActor pid=12320)  [repeated 3x across cluster]
+(ClientAppActor pid=12320)       Normal       0.99      0.97      0.98       395
+(ClientAppActor pid=12320) Tuberculosis       0.91      0.96      0.94       111
+(ClientAppActor pid=12320)    Pneumonia       0.98      0.99      0.99       194
+(ClientAppActor pid=12320)     accuracy                           0.97       700
+(ClientAppActor pid=12320)    macro avg       0.96      0.98      0.97       700
+(ClientAppActor pid=12320) weighted avg       0.97      0.97      0.97       700
+(ClientAppActor pid=12320) print client: Val Loss: 0.0714, Accuracy: 0.9743
+(ClientAppActor pid=13884)               precision    recall  f1-score   support
+(ClientAppActor pid=13884)       Normal       1.00      0.95      0.97       509
+(ClientAppActor pid=13884) Tuberculosis       0.87      0.98      0.92        92
+(ClientAppActor pid=13884)    Pneumonia       0.96      1.00      0.98       219
+(ClientAppActor pid=13884)     accuracy                           0.97       820
+(ClientAppActor pid=13884)    macro avg       0.94      0.98      0.96       820
+(ClientAppActor pid=13884) weighted avg       0.97      0.97      0.97       820
+(ClientAppActor pid=13884) print client: Val Loss: 0.0735, Accuracy: 0.9695
+INFO :      aggregate_evaluate: received 4 results and 0 failures
+server_app.weighted_average: Client 0: Examples=700, Accuracy=0.9743
+server_app.weighted_average: Client 1: Examples=900, Accuracy=0.9800
+server_app.weighted_average: Client 2: Examples=820, Accuracy=0.9695
+server_app.weighted_average: Client 3: Examples=605, Accuracy=0.9669
+INFO :
+INFO :      [ROUND 7]
+INFO :      configure_fit: strategy sampled 4 clients (out of 4)
+(ClientAppActor pid=38796)  [repeated 6x across cluster]
+(ClientAppActor pid=38796) loading data
+(ClientAppActor pid=38796) loaded data
+(ClientAppActor pid=38796)               precision    recall  f1-score   support
+(ClientAppActor pid=38796)       Normal       1.00      0.97      0.98       581
+(ClientAppActor pid=38796) Tuberculosis       0.91      1.00      0.95        98
+(ClientAppActor pid=38796)    Pneumonia       0.97      1.00      0.98       221
+(ClientAppActor pid=38796)     accuracy                           0.98       900
+(ClientAppActor pid=38796)    macro avg       0.96      0.99      0.97       900
+(ClientAppActor pid=38796) weighted avg       0.98      0.98      0.98       900
+(ClientAppActor pid=38796) print client: Val Loss: 0.0654, Accuracy: 0.9800
+(ClientAppActor pid=13884) print net.train: Epoch 1/1, Loss: 3.1358
+(ClientAppActor pid=18716) loading data [repeated 3x across cluster]
+(ClientAppActor pid=18716) loaded data [repeated 3x across cluster]
+(ClientAppActor pid=13884)               precision    recall  f1-score   support
+(ClientAppActor pid=13884) 
+(ClientAppActor pid=13884)       Normal       0.97      0.97      0.97       323
+(ClientAppActor pid=13884) Tuberculosis       0.93      0.90      0.92        62
+(ClientAppActor pid=13884)    Pneumonia       0.98      0.98      0.98       220
+(ClientAppActor pid=13884)
+(ClientAppActor pid=13884)     accuracy                           0.97       605
+(ClientAppActor pid=13884)    macro avg       0.96      0.95      0.96       605
+(ClientAppActor pid=13884) weighted avg       0.97      0.97      0.97       605
+(ClientAppActor pid=13884)
+(ClientAppActor pid=13884) print net.val: Validation Loss: 0.1160, Accuracy: 0.9686
+(ClientAppActor pid=18716) print net.train: Epoch 1/1, Loss: 3.0732
+(ClientAppActor pid=18716)               precision    recall  f1-score   support
+(ClientAppActor pid=18716) 
+(ClientAppActor pid=18716)       Normal       0.96      0.98      0.97       417
+(ClientAppActor pid=18716) Tuberculosis       0.97      0.89      0.93       123
+(ClientAppActor pid=18716)    Pneumonia       0.98      0.99      0.98       160
+(ClientAppActor pid=18716)
+(ClientAppActor pid=18716)     accuracy                           0.97       700
+(ClientAppActor pid=18716)    macro avg       0.97      0.96      0.96       700
+(ClientAppActor pid=18716) weighted avg       0.97      0.97      0.97       700
+(ClientAppActor pid=18716)
+(ClientAppActor pid=18716) print net.val: Validation Loss: 0.0810, Accuracy: 0.9686
+(ClientAppActor pid=38796) print net.train: Epoch 1/1, Loss: 3.2061
+(ClientAppActor pid=12320) print net.train: Epoch 1/1, Loss: 3.1127
+(ClientAppActor pid=38796)               precision    recall  f1-score   support
+(ClientAppActor pid=38796) 
+(ClientAppActor pid=38796)       Normal       0.97      0.99      0.98       509
+(ClientAppActor pid=38796) Tuberculosis       0.96      0.90      0.93        91
+(ClientAppActor pid=38796)    Pneumonia       1.00      0.96      0.98       220
+(ClientAppActor pid=38796)
+(ClientAppActor pid=38796)     accuracy                           0.98       820
+(ClientAppActor pid=38796)    macro avg       0.98      0.95      0.96       820
+(ClientAppActor pid=38796) weighted avg       0.98      0.98      0.98       820
+(ClientAppActor pid=38796)
+(ClientAppActor pid=38796) print net.val: Validation Loss: 0.0909, Accuracy: 0.9756
+(ClientAppActor pid=12320)               precision    recall  f1-score   support
+(ClientAppActor pid=12320)  [repeated 3x across cluster]
+(ClientAppActor pid=12320)       Normal       0.97      0.96      0.96       603
+(ClientAppActor pid=12320) Tuberculosis       0.91      0.79      0.85       106
+(ClientAppActor pid=12320)    Pneumonia       0.91      0.99      0.95       191
+(ClientAppActor pid=12320)     accuracy                           0.95       900
+(ClientAppActor pid=12320)    macro avg       0.93      0.91      0.92       900
+(ClientAppActor pid=12320) weighted avg       0.95      0.95      0.95       900
+(ClientAppActor pid=12320) print net.val: Validation Loss: 0.2469, Accuracy: 0.9478
+INFO :      aggregate_fit: received 4 results and 0 failures
+loading data
+loaded data
+              precision    recall  f1-score   support
+
+      Normal       1.00      0.99      0.99       610
+Tuberculosis       0.96      0.99      0.97        97
+   Pneumonia       0.98      0.99      0.99       193
+
+    accuracy                           0.99       900
+   macro avg       0.98      0.99      0.99       900
+weighted avg       0.99      0.99      0.99       900
+
+Server Round 7 Test Accuracy: 0.9900 class accuracy:{'Normal': 0.9885245901639345, 'Tuberculosis': 0.9896907216494846, 'Pneumonia': 0.9948186528497409}
+INFO :      fit progress: (7, 0.05002443873773104, {'accuracy': 0.99, 'loss': 0.05002443873773104}, 4959.865516299999)
+INFO :      configure_evaluate: strategy sampled 4 clients (out of 4)
+(ClientAppActor pid=12320) loading data
+(ClientAppActor pid=12320) loaded data
+(ClientAppActor pid=13884)               precision    recall  f1-score   support
+(ClientAppActor pid=13884) 
+(ClientAppActor pid=13884)       Normal       0.99      0.96      0.98       323
+(ClientAppActor pid=13884) Tuberculosis       0.89      0.95      0.92        62
+(ClientAppActor pid=13884)    Pneumonia       0.97      1.00      0.98       220
+(ClientAppActor pid=13884)
+(ClientAppActor pid=13884)     accuracy                           0.97       605
+(ClientAppActor pid=13884)    macro avg       0.95      0.97      0.96       605
+(ClientAppActor pid=13884) weighted avg       0.97      0.97      0.97       605
+(ClientAppActor pid=13884)
+(ClientAppActor pid=13884) print client: Val Loss: 0.0851, Accuracy: 0.9736
+(ClientAppActor pid=13884) loading data [repeated 3x across cluster]
+(ClientAppActor pid=13884) loaded data [repeated 3x across cluster]
+(ClientAppActor pid=18716)               precision    recall  f1-score   support
+(ClientAppActor pid=18716)  [repeated 3x across cluster]
+(ClientAppActor pid=18716)       Normal       0.99      0.98      0.99       417
+(ClientAppActor pid=18716) Tuberculosis       0.95      0.97      0.96       123
+(ClientAppActor pid=18716)    Pneumonia       0.99      0.99      0.99       160
+(ClientAppActor pid=18716)     accuracy                           0.98       700
+(ClientAppActor pid=18716)    macro avg       0.98      0.98      0.98       700
+(ClientAppActor pid=18716) weighted avg       0.98      0.98      0.98       700
+(ClientAppActor pid=18716) print client: Val Loss: 0.0711, Accuracy: 0.9829
+(ClientAppActor pid=38796)               precision    recall  f1-score   support
+(ClientAppActor pid=38796)       Normal       0.99      0.98      0.98       509
+(ClientAppActor pid=38796) Tuberculosis       0.93      0.95      0.94        91
+(ClientAppActor pid=38796)    Pneumonia       0.99      0.99      0.99       220
+(ClientAppActor pid=38796)     accuracy                           0.98       820
+(ClientAppActor pid=38796)    macro avg       0.97      0.97      0.97       820
+(ClientAppActor pid=38796) weighted avg       0.98      0.98      0.98       820
+(ClientAppActor pid=38796) print client: Val Loss: 0.0670, Accuracy: 0.9805
+(ClientAppActor pid=12320)  [repeated 6x across cluster]
+(ClientAppActor pid=12320)               precision    recall  f1-score   support
+(ClientAppActor pid=12320)       Normal       0.99      0.98      0.99       603
+(ClientAppActor pid=12320) Tuberculosis       0.94      0.96      0.95       106
+(ClientAppActor pid=12320)    Pneumonia       0.98      0.99      0.99       191
+(ClientAppActor pid=12320)     accuracy                           0.98       900
+(ClientAppActor pid=12320)    macro avg       0.97      0.98      0.98       900
+(ClientAppActor pid=12320) weighted avg       0.98      0.98      0.98       900
+(ClientAppActor pid=12320) print client: Val Loss: 0.0667, Accuracy: 0.9833
+INFO :      aggregate_evaluate: received 4 results and 0 failures
+server_app.weighted_average: Client 0: Examples=900, Accuracy=0.9833
+server_app.weighted_average: Client 1: Examples=700, Accuracy=0.9829
+server_app.weighted_average: Client 2: Examples=605, Accuracy=0.9736
+server_app.weighted_average: Client 3: Examples=820, Accuracy=0.9805
+INFO :
+INFO :      [ROUND 8]
+INFO :      configure_fit: strategy sampled 4 clients (out of 4)
+(ClientAppActor pid=12320) loading data
+(ClientAppActor pid=12320) loaded data
+(ClientAppActor pid=38796) print net.train: Epoch 1/1, Loss: 2.9055
+(ClientAppActor pid=18716) loading data [repeated 3x across cluster]
+(ClientAppActor pid=18716) loaded data [repeated 3x across cluster]
+(ClientAppActor pid=38796)               precision    recall  f1-score   support
+(ClientAppActor pid=38796) 
+(ClientAppActor pid=38796)       Normal       0.97      0.98      0.98       334
+(ClientAppActor pid=38796) Tuberculosis       0.95      0.96      0.96        57
+(ClientAppActor pid=38796)    Pneumonia       0.98      0.96      0.97       214
+(ClientAppActor pid=38796)
+(ClientAppActor pid=38796)     accuracy                           0.97       605
+(ClientAppActor pid=38796)    macro avg       0.97      0.97      0.97       605
+(ClientAppActor pid=38796) weighted avg       0.97      0.97      0.97       605
+(ClientAppActor pid=38796)
+(ClientAppActor pid=38796) print net.val: Validation Loss: 0.1186, Accuracy: 0.9719
+(ClientAppActor pid=12320) print net.train: Epoch 1/1, Loss: 2.9478
+(ClientAppActor pid=12320)               precision    recall  f1-score   support
+(ClientAppActor pid=12320) 
+(ClientAppActor pid=12320)       Normal       0.99      0.98      0.98       395
+(ClientAppActor pid=12320) Tuberculosis       0.94      0.97      0.96       111
+(ClientAppActor pid=12320)    Pneumonia       0.99      1.00      0.99       194
+(ClientAppActor pid=12320)
+(ClientAppActor pid=12320)     accuracy                           0.98       700
+(ClientAppActor pid=12320)    macro avg       0.97      0.98      0.98       700
+(ClientAppActor pid=12320) weighted avg       0.98      0.98      0.98       700
+(ClientAppActor pid=12320)
+(ClientAppActor pid=12320) print net.val: Validation Loss: 0.0494, Accuracy: 0.9829
+(ClientAppActor pid=13884) print net.train: Epoch 1/1, Loss: 3.0525
+(ClientAppActor pid=18716) print net.train: Epoch 1/1, Loss: 3.0027
+(ClientAppActor pid=13884)               precision    recall  f1-score   support
+(ClientAppActor pid=13884) 
+(ClientAppActor pid=13884)       Normal       0.99      0.97      0.98       509
+(ClientAppActor pid=13884) Tuberculosis       0.88      0.92      0.90        92
+(ClientAppActor pid=13884)    Pneumonia       0.99      1.00      0.99       219
+(ClientAppActor pid=13884)
+(ClientAppActor pid=13884)     accuracy                           0.97       820
+(ClientAppActor pid=13884)    macro avg       0.95      0.96      0.96       820
+(ClientAppActor pid=13884) weighted avg       0.97      0.97      0.97       820
+(ClientAppActor pid=13884)
+(ClientAppActor pid=13884) print net.val: Validation Loss: 0.0713, Accuracy: 0.9732
+(ClientAppActor pid=18716)               precision    recall  f1-score   support
+(ClientAppActor pid=18716)  [repeated 3x across cluster]
+(ClientAppActor pid=18716)       Normal       0.98      0.97      0.98       589
+(ClientAppActor pid=18716) Tuberculosis       0.87      0.94      0.90       108
+(ClientAppActor pid=18716)    Pneumonia       0.99      0.97      0.98       203
+(ClientAppActor pid=18716)     accuracy                           0.97       900
+(ClientAppActor pid=18716)    macro avg       0.95      0.96      0.95       900
+(ClientAppActor pid=18716) weighted avg       0.97      0.97      0.97       900
+(ClientAppActor pid=18716) print net.val: Validation Loss: 0.0769, Accuracy: 0.9678
+INFO :      aggregate_fit: received 4 results and 0 failures
+loading data
+loaded data
+              precision    recall  f1-score   support
+
+      Normal       0.99      0.97      0.98       348
+Tuberculosis       0.90      1.00      0.95        56
+   Pneumonia       0.98      0.99      0.99       201
+
+    accuracy                           0.98       605
+   macro avg       0.96      0.99      0.97       605
+weighted avg       0.98      0.98      0.98       605
+
+Server Round 8 Test Accuracy: 0.9802 class accuracy:{'Normal': 0.9712643678160919, 'Tuberculosis': 1.0, 'Pneumonia': 0.9900497512437811} 
+INFO :      fit progress: (8, 0.053470289261129345, {'accuracy': 0.9801652892561984, 'loss': 0.053470289261129345}, 5663.5333369)        
+INFO :      configure_evaluate: strategy sampled 4 clients (out of 4)
+(ClientAppActor pid=38796) loading data
+(ClientAppActor pid=38796) loaded data
+(ClientAppActor pid=38796)               precision    recall  f1-score   support
+(ClientAppActor pid=38796) 
+(ClientAppActor pid=38796)       Normal       0.98      0.97      0.98       334
+(ClientAppActor pid=38796) Tuberculosis       0.92      0.96      0.94        57
+(ClientAppActor pid=38796)    Pneumonia       0.98      0.98      0.98       214
+(ClientAppActor pid=38796)
+(ClientAppActor pid=38796)     accuracy                           0.98       605
+(ClientAppActor pid=38796)    macro avg       0.96      0.97      0.97       605
+(ClientAppActor pid=38796) weighted avg       0.98      0.98      0.98       605
+(ClientAppActor pid=38796)
+(ClientAppActor pid=38796) print client: Val Loss: 0.0734, Accuracy: 0.9752
+(ClientAppActor pid=13884) loading data [repeated 3x across cluster]
+(ClientAppActor pid=13884) loaded data [repeated 3x across cluster]
+(ClientAppActor pid=12320)               precision    recall  f1-score   support
+(ClientAppActor pid=12320)  [repeated 3x across cluster]
+(ClientAppActor pid=12320)       Normal       0.99      0.98      0.98       395
+(ClientAppActor pid=12320) Tuberculosis       0.95      0.97      0.96       111
+(ClientAppActor pid=12320)    Pneumonia       0.99      0.99      0.99       194
+(ClientAppActor pid=12320)     accuracy                           0.98       700
+(ClientAppActor pid=12320)    macro avg       0.98      0.98      0.98       700
+(ClientAppActor pid=12320) weighted avg       0.98      0.98      0.98       700
+(ClientAppActor pid=12320) print client: Val Loss: 0.0487, Accuracy: 0.9829
+(ClientAppActor pid=13884)               precision    recall  f1-score   support
+(ClientAppActor pid=13884)       Normal       0.99      0.97      0.98       509
+(ClientAppActor pid=13884) Tuberculosis       0.89      0.97      0.93        92
+(ClientAppActor pid=13884)    Pneumonia       0.98      1.00      0.99       219
+(ClientAppActor pid=13884)     accuracy                           0.98       820
+(ClientAppActor pid=13884)    macro avg       0.95      0.98      0.97       820
+(ClientAppActor pid=13884) weighted avg       0.98      0.98      0.98       820
+(ClientAppActor pid=13884) print client: Val Loss: 0.0544, Accuracy: 0.9768
+INFO :      aggregate_evaluate: received 4 results and 0 failures
+server_app.weighted_average: Client 0: Examples=605, Accuracy=0.9752
+server_app.weighted_average: Client 1: Examples=820, Accuracy=0.9768
+server_app.weighted_average: Client 2: Examples=900, Accuracy=0.9800
+server_app.weighted_average: Client 3: Examples=700, Accuracy=0.9829
+INFO :
+INFO :      [ROUND 9]
+INFO :      configure_fit: strategy sampled 4 clients (out of 4)
+(ClientAppActor pid=18716)  [repeated 6x across cluster]
+(ClientAppActor pid=38796) loading data
+(ClientAppActor pid=38796) loaded data
+(ClientAppActor pid=12320) print net.train: Epoch 1/1, Loss: 3.4194
+(ClientAppActor pid=18716)               precision    recall  f1-score   support
+(ClientAppActor pid=18716)       Normal       0.99      0.98      0.98       589
+(ClientAppActor pid=18716) Tuberculosis       0.93      0.96      0.95       108
+(ClientAppActor pid=18716)    Pneumonia       0.98      0.99      0.99       203
+(ClientAppActor pid=18716)     accuracy                           0.98       900
+(ClientAppActor pid=18716)    macro avg       0.97      0.98      0.97       900
+(ClientAppActor pid=18716) weighted avg       0.98      0.98      0.98       900
+(ClientAppActor pid=18716) print client: Val Loss: 0.0560, Accuracy: 0.9800
+(ClientAppActor pid=18716) loading data [repeated 3x across cluster]
+(ClientAppActor pid=18716) loaded data [repeated 3x across cluster]
+(ClientAppActor pid=12320)               precision    recall  f1-score   support
+(ClientAppActor pid=12320) 
+(ClientAppActor pid=12320)       Normal       0.97      0.99      0.98       325
+(ClientAppActor pid=12320) Tuberculosis       0.98      0.89      0.93        63
+(ClientAppActor pid=12320)    Pneumonia       0.99      0.99      0.99       217
+(ClientAppActor pid=12320)
+(ClientAppActor pid=12320)     accuracy                           0.98       605
+(ClientAppActor pid=12320)    macro avg       0.98      0.96      0.97       605
+(ClientAppActor pid=12320) weighted avg       0.98      0.98      0.98       605
+(ClientAppActor pid=12320)
+(ClientAppActor pid=12320) print net.val: Validation Loss: 0.0969, Accuracy: 0.9785
+(ClientAppActor pid=38796) print net.train: Epoch 1/1, Loss: 2.6274
+(ClientAppActor pid=38796)               precision    recall  f1-score   support
+(ClientAppActor pid=38796) 
+(ClientAppActor pid=38796)       Normal       1.00      0.88      0.93       417
+(ClientAppActor pid=38796) Tuberculosis       0.70      0.98      0.82       109
+(ClientAppActor pid=38796)    Pneumonia       0.95      0.99      0.97       174
+(ClientAppActor pid=38796)
+(ClientAppActor pid=38796)     accuracy                           0.92       700
+(ClientAppActor pid=38796)    macro avg       0.88      0.95      0.91       700
+(ClientAppActor pid=38796) weighted avg       0.94      0.92      0.92       700
+(ClientAppActor pid=38796)
+(ClientAppActor pid=38796) print net.val: Validation Loss: 0.2262, Accuracy: 0.9214
+(ClientAppActor pid=13884) print net.train: Epoch 1/1, Loss: 2.7787
+(ClientAppActor pid=13884)               precision    recall  f1-score   support
+(ClientAppActor pid=13884) 
+(ClientAppActor pid=13884)       Normal       0.99      0.98      0.98       509
+(ClientAppActor pid=13884) Tuberculosis       0.91      0.93      0.92        92
+(ClientAppActor pid=13884)    Pneumonia       1.00      1.00      1.00       219
+(ClientAppActor pid=13884)
+(ClientAppActor pid=13884)     accuracy                           0.98       820
+(ClientAppActor pid=13884)    macro avg       0.97      0.97      0.97       820
+(ClientAppActor pid=13884) weighted avg       0.98      0.98      0.98       820
+(ClientAppActor pid=13884)
+(ClientAppActor pid=13884) print net.val: Validation Loss: 0.0619, Accuracy: 0.9805
+(ClientAppActor pid=18716) print net.train: Epoch 1/1, Loss: 2.5418
+(ClientAppActor pid=18716)               precision    recall  f1-score   support
+(ClientAppActor pid=18716)  [repeated 3x across cluster]
+(ClientAppActor pid=18716)       Normal       0.98      0.99      0.99       589
+(ClientAppActor pid=18716) Tuberculosis       0.99      0.91      0.95       108
+(ClientAppActor pid=18716)    Pneumonia       0.99      0.98      0.99       203
+(ClientAppActor pid=18716)     accuracy                           0.98       900
+(ClientAppActor pid=18716)    macro avg       0.99      0.96      0.97       900
+(ClientAppActor pid=18716) weighted avg       0.98      0.98      0.98       900
+(ClientAppActor pid=18716) print net.val: Validation Loss: 0.0742, Accuracy: 0.9811
+INFO :      aggregate_fit: received 4 results and 0 failures
+loading data
+loaded data
+              precision    recall  f1-score   support
+
+      Normal       0.99      0.97      0.98       348
+Tuberculosis       0.89      1.00      0.94        56
+   Pneumonia       0.99      0.99      0.99       201
+
+    accuracy                           0.98       605
+   macro avg       0.96      0.99      0.97       605
+weighted avg       0.98      0.98      0.98       605
+
+Server Round 9 Test Accuracy: 0.9802 class accuracy:{'Normal': 0.9712643678160919, 'Tuberculosis': 1.0, 'Pneumonia': 0.9900497512437811} 
+INFO :      fit progress: (9, 0.05706448806449771, {'accuracy': 0.9801652892561984, 'loss': 0.05706448806449771}, 6354.954441399999)     
+INFO :      configure_evaluate: strategy sampled 4 clients (out of 4)
+(ClientAppActor pid=18716) loading data
+(ClientAppActor pid=18716) loaded data
+(ClientAppActor pid=12320)               precision    recall  f1-score   support
+(ClientAppActor pid=12320) 
+(ClientAppActor pid=12320)       Normal       0.99      0.98      0.99       325
+(ClientAppActor pid=12320) Tuberculosis       0.95      0.98      0.97        63
+(ClientAppActor pid=12320)    Pneumonia       0.99      1.00      0.99       217
+(ClientAppActor pid=12320)
+(ClientAppActor pid=12320)     accuracy                           0.99       605
+(ClientAppActor pid=12320)    macro avg       0.98      0.99      0.98       605
+(ClientAppActor pid=12320) weighted avg       0.99      0.99      0.99       605
+(ClientAppActor pid=12320)
+(ClientAppActor pid=12320) print client: Val Loss: 0.0600, Accuracy: 0.9884
+(ClientAppActor pid=13884) loading data [repeated 3x across cluster]
+(ClientAppActor pid=13884) loaded data [repeated 3x across cluster]
+(ClientAppActor pid=18716)               precision    recall  f1-score   support
+(ClientAppActor pid=18716)  [repeated 3x across cluster]
+(ClientAppActor pid=18716)       Normal       1.00      0.99      0.99       417
+(ClientAppActor pid=18716) Tuberculosis       0.98      0.98      0.98       123
+(ClientAppActor pid=18716)    Pneumonia       0.99      1.00      1.00       160
+(ClientAppActor pid=18716)     accuracy                           0.99       700
+(ClientAppActor pid=18716)    macro avg       0.99      0.99      0.99       700
+(ClientAppActor pid=18716) weighted avg       0.99      0.99      0.99       700
+(ClientAppActor pid=18716) print client: Val Loss: 0.0465, Accuracy: 0.9914
+(ClientAppActor pid=13884)               precision    recall  f1-score   support
+(ClientAppActor pid=13884)       Normal       1.00      0.97      0.99       509
+(ClientAppActor pid=13884) Tuberculosis       0.89      1.00      0.94        92
+(ClientAppActor pid=13884)    Pneumonia       0.98      1.00      0.99       219
+(ClientAppActor pid=13884)     accuracy                           0.98       820
+(ClientAppActor pid=13884)    macro avg       0.96      0.99      0.97       820
+(ClientAppActor pid=13884) weighted avg       0.98      0.98      0.98       820
+(ClientAppActor pid=13884) print client: Val Loss: 0.0518, Accuracy: 0.9817
+(ClientAppActor pid=13884)  [repeated 3x across cluster]
+INFO :      aggregate_evaluate: received 4 results and 0 failures
+server_app.weighted_average: Client 0: Examples=605, Accuracy=0.9884
+server_app.weighted_average: Client 1: Examples=820, Accuracy=0.9817
+server_app.weighted_average: Client 2: Examples=900, Accuracy=0.9867
+server_app.weighted_average: Client 3: Examples=700, Accuracy=0.9914
+INFO :
+INFO :      [ROUND 10]
+INFO :      configure_fit: strategy sampled 4 clients (out of 4)
+(ClientAppActor pid=38796) loading data
+(ClientAppActor pid=38796) loaded data
+(ClientAppActor pid=38796)               precision    recall  f1-score   support
+(ClientAppActor pid=38796)       Normal       1.00      0.98      0.99       581
+(ClientAppActor pid=38796) Tuberculosis       0.93      1.00      0.97        98
+(ClientAppActor pid=38796)    Pneumonia       0.98      1.00      0.99       221
+(ClientAppActor pid=38796)     accuracy                           0.99       900
+(ClientAppActor pid=38796)    macro avg       0.97      0.99      0.98       900
+(ClientAppActor pid=38796) weighted avg       0.99      0.99      0.99       900
+(ClientAppActor pid=38796) print client: Val Loss: 0.0440, Accuracy: 0.9867
+(ClientAppActor pid=38796)  [repeated 3x across cluster]
+(ClientAppActor pid=18716) print net.train: Epoch 1/1, Loss: 2.3363
+(ClientAppActor pid=18716) loading data [repeated 3x across cluster]
+(ClientAppActor pid=18716) loaded data [repeated 3x across cluster]
+(ClientAppActor pid=18716)               precision    recall  f1-score   support
+(ClientAppActor pid=18716) 
+(ClientAppActor pid=18716)       Normal       0.97      0.98      0.98       312
+(ClientAppActor pid=18716) Tuberculosis       0.98      0.89      0.93        70
+(ClientAppActor pid=18716)    Pneumonia       0.98      1.00      0.99       223
+(ClientAppActor pid=18716)
+(ClientAppActor pid=18716)     accuracy                           0.98       605
+(ClientAppActor pid=18716)    macro avg       0.98      0.96      0.97       605
+(ClientAppActor pid=18716) weighted avg       0.98      0.98      0.98       605
+(ClientAppActor pid=18716)
+(ClientAppActor pid=18716) print net.val: Validation Loss: 0.0841, Accuracy: 0.9769
+(ClientAppActor pid=12320) print net.train: Epoch 1/1, Loss: 2.2057
+(ClientAppActor pid=12320)               precision    recall  f1-score   support
+(ClientAppActor pid=12320) 
+(ClientAppActor pid=12320)       Normal       1.00      0.97      0.98       395
+(ClientAppActor pid=12320) Tuberculosis       0.92      1.00      0.96       111
+(ClientAppActor pid=12320)    Pneumonia       0.98      1.00      0.99       194
+(ClientAppActor pid=12320)
+(ClientAppActor pid=12320)     accuracy                           0.98       700
+(ClientAppActor pid=12320)    macro avg       0.97      0.99      0.98       700
+(ClientAppActor pid=12320) weighted avg       0.98      0.98      0.98       700
+(ClientAppActor pid=12320)
+(ClientAppActor pid=12320) print net.val: Validation Loss: 0.0634, Accuracy: 0.9814
+(ClientAppActor pid=38796) print net.train: Epoch 1/1, Loss: 2.9642
+(ClientAppActor pid=38796)               precision    recall  f1-score   support
+(ClientAppActor pid=38796) 
+(ClientAppActor pid=38796)       Normal       0.95      1.00      0.98       509
+(ClientAppActor pid=38796) Tuberculosis       0.99      0.88      0.93        91
+(ClientAppActor pid=38796)    Pneumonia       1.00      0.94      0.97       220
+(ClientAppActor pid=38796)
+(ClientAppActor pid=38796)     accuracy                           0.97       820
+(ClientAppActor pid=38796)    macro avg       0.98      0.94      0.96       820
+(ClientAppActor pid=38796) weighted avg       0.97      0.97      0.97       820
+(ClientAppActor pid=38796)
+(ClientAppActor pid=38796) print net.val: Validation Loss: 0.1019, Accuracy: 0.9683
+(ClientAppActor pid=13884) print net.train: Epoch 1/1, Loss: 2.1079
+(ClientAppActor pid=13884)               precision    recall  f1-score   support
+(ClientAppActor pid=13884)  [repeated 3x across cluster]
+(ClientAppActor pid=13884)       Normal       0.98      0.99      0.99       598
+(ClientAppActor pid=13884) Tuberculosis       0.99      0.94      0.96       113
+(ClientAppActor pid=13884)    Pneumonia       0.98      0.98      0.98       189
+(ClientAppActor pid=13884)     accuracy                           0.98       900
+(ClientAppActor pid=13884)    macro avg       0.98      0.97      0.98       900
+(ClientAppActor pid=13884) weighted avg       0.98      0.98      0.98       900
+(ClientAppActor pid=13884) print net.val: Validation Loss: 0.0527, Accuracy: 0.9833
+INFO :      aggregate_fit: received 4 results and 0 failures
+loading data
+loaded data
+              precision    recall  f1-score   support
+
+      Normal       0.93      1.00      0.96       100
+Tuberculosis       1.00      0.94      0.97       100
+   Pneumonia       1.00      0.98      0.99       100
+
+    accuracy                           0.97       300
+   macro avg       0.98      0.97      0.97       300
+weighted avg       0.98      0.97      0.97       300
+
+Server Round 10 Test Accuracy: 0.9733 class accuracy:{'Normal': 1.0, 'Tuberculosis': 0.94, 'Pneumonia': 0.98}
+INFO :      fit progress: (10, 0.08780678473412991, {'accuracy': 0.9733333333333334, 'loss': 0.08780678473412991}, 7041.061315499999)    
+INFO :      configure_evaluate: strategy sampled 4 clients (out of 4)
+(ClientAppActor pid=12320) loading data
+(ClientAppActor pid=12320) loaded data
+(ClientAppActor pid=12320)               precision    recall  f1-score   support
+(ClientAppActor pid=12320) 
+(ClientAppActor pid=12320)       Normal       0.99      0.99      0.99       325
+(ClientAppActor pid=12320) Tuberculosis       1.00      0.97      0.98        63
+(ClientAppActor pid=12320)    Pneumonia       0.99      1.00      0.99       217
+(ClientAppActor pid=12320)
+(ClientAppActor pid=12320)     accuracy                           0.99       605
+(ClientAppActor pid=12320)    macro avg       0.99      0.99      0.99       605
+(ClientAppActor pid=12320) weighted avg       0.99      0.99      0.99       605
+(ClientAppActor pid=12320)
+(ClientAppActor pid=12320) print client: Val Loss: 0.0423, Accuracy: 0.9917
+(ClientAppActor pid=18716) loading data [repeated 3x across cluster]
+(ClientAppActor pid=18716) loaded data [repeated 3x across cluster]
+(ClientAppActor pid=18716)               precision    recall  f1-score   support
+(ClientAppActor pid=18716)  [repeated 3x across cluster]
+(ClientAppActor pid=18716)       Normal       0.99      1.00      0.99       417
+(ClientAppActor pid=18716) Tuberculosis       1.00      0.97      0.98       123
+(ClientAppActor pid=18716)    Pneumonia       0.99      1.00      1.00       160
+(ClientAppActor pid=18716)     accuracy                           0.99       700
+(ClientAppActor pid=18716)    macro avg       0.99      0.99      0.99       700
+(ClientAppActor pid=18716) weighted avg       0.99      0.99      0.99       700
+(ClientAppActor pid=18716) print client: Val Loss: 0.0307, Accuracy: 0.9929
+(ClientAppActor pid=38796)               precision    recall  f1-score   support
+(ClientAppActor pid=38796)       Normal       0.98      0.99      0.99       509
+(ClientAppActor pid=38796) Tuberculosis       0.97      0.93      0.95        91
+(ClientAppActor pid=38796)    Pneumonia       1.00      0.99      1.00       220
+(ClientAppActor pid=38796)     accuracy                           0.99       820
+(ClientAppActor pid=38796)    macro avg       0.98      0.97      0.98       820
+(ClientAppActor pid=38796) weighted avg       0.99      0.99      0.99       820
+(ClientAppActor pid=38796) print client: Val Loss: 0.0341, Accuracy: 0.9866
+INFO :      aggregate_evaluate: received 4 results and 0 failures
+server_app.weighted_average: Client 0: Examples=900, Accuracy=0.9811
+server_app.weighted_average: Client 1: Examples=820, Accuracy=0.9866
+server_app.weighted_average: Client 2: Examples=700, Accuracy=0.9929
+server_app.weighted_average: Client 3: Examples=605, Accuracy=0.9917
+INFO :
+(ClientAppActor pid=13884)  [repeated 6x across cluster]
+INFO :      [SUMMARY]
+INFO :      Run finished 10 round(s) in 7097.33s
+INFO :          History (loss, distributed):
+INFO :                  round 1: 0.7898867932162973
+INFO :                  round 2: 0.3303930124625057
+INFO :                  round 3: 0.11838272523570739
+INFO :                  round 4: 0.12434937186747991
+INFO :                  round 5: 0.07140046660484037
+INFO :                  round 6: 0.07156379910199248
+INFO :                  round 7: 0.07147309215701488
+INFO :                  round 8: 0.05735217711529951
+INFO :                  round 9: 0.049906904842386676
+INFO :                  round 10: 0.036202214250207934
+INFO :          History (loss, centralized):
+INFO :                  round 0: 1.091202906493483
+INFO :                  round 1: 0.7156829864814364
+INFO :                  round 2: 0.35720711201429367
+INFO :                  round 3: 0.11203464645553719
+INFO :                  round 4: 0.09523257863675726
+INFO :                  round 5: 0.07627178008922121
+INFO :                  round 6: 0.06000739140917772
+INFO :                  round 7: 0.05002443873773104
+INFO :                  round 8: 0.053470289261129345
+INFO :                  round 9: 0.05706448806449771
+INFO :                  round 10: 0.08780678473412991
+INFO :          History (metrics, distributed, evaluate):
+INFO :          {'accuracy': [(1, 0.6152066115702479),
+INFO :                        (2, 0.9256198347107438),
+INFO :                        (3, 0.9656198347107438),
+INFO :                        (4, 0.9672727272727273),
+INFO :                        (5, 0.9788429752066116),
+INFO :                        (6, 0.9732231404958678),
+INFO :                        (7, 0.980495867768595),
+INFO :                        (8, 0.9788429752066116),
+INFO :                        (9, 0.9867768595041322),
+INFO :                        (10, 0.9874380165289256)]}
+INFO :          History (metrics, centralized):
+INFO :          {'accuracy': [(0, 0.4311111111111111),
+INFO :                        (1, 0.6888888888888889),
+INFO :                        (2, 0.9028571428571428),
+INFO :                        (3, 0.9657142857142857),
+INFO :                        (4, 0.9777777777777777),
+INFO :                        (5, 0.98),
+INFO :                        (6, 0.9811111111111112),
+INFO :                        (7, 0.99),
+INFO :                        (8, 0.9801652892561984),
+INFO :                        (9, 0.9801652892561984),
+INFO :                        (10, 0.9733333333333334)],
+INFO :           'loss': [(0, 1.091202906493483),
+INFO :                    (1, 0.7156829864814364),
+INFO :                    (2, 0.35720711201429367),
+INFO :                    (3, 0.11203464645553719),
+INFO :                    (4, 0.09523257863675726),
+INFO :                    (5, 0.07627178008922121),
+INFO :                    (6, 0.06000739140917772),
+INFO :                    (7, 0.05002443873773104),
+INFO :                    (8, 0.053470289261129345),
+INFO :                    (9, 0.05706448806449771),
+INFO :                    (10, 0.08780678473412991)]}
+INFO :
+(ClientAppActor pid=13884)               precision    recall  f1-score   support
+(ClientAppActor pid=13884)       Normal       0.98      0.99      0.99       598
+(ClientAppActor pid=13884) Tuberculosis       0.98      0.94      0.96       113
+(ClientAppActor pid=13884)    Pneumonia       0.98      0.98      0.98       189
+(ClientAppActor pid=13884)     accuracy                           0.98       900
+(ClientAppActor pid=13884)    macro avg       0.98      0.97      0.97       900
+(ClientAppActor pid=13884) weighted avg       0.98      0.98      0.98       900
+(ClientAppActor pid=13884) print client: Val Loss: 0.0384, Accuracy: 0.9811
