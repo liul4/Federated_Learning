@@ -29,7 +29,7 @@ num-server-rounds = 10
 fraction-fit = 1.0
 local-epochs = 3
 learning-rate = 0.01
-batch-size = 16
+batch-size = 32
 
 [tool.flwr.federations]
 default = "local-simulation"
