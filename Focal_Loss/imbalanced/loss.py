@@ -1,3 +1,4 @@
+"""Focal loss modified from: https://github.com/balanced-fl/Addressing-Class-Imbalance-FL"""
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
