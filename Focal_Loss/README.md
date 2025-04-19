@@ -1,4 +1,6 @@
-# A Flower / PyTorch app
+# Focal loss
+
+Implementation of focal loss, which is proposed in *"Focal Loss for Dense Object Detection"*.
 
 ## Install dependencies and project
 

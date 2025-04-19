@@ -1,4 +1,4 @@
-# A Flower / PyTorch app
+# Baseline Experiment
 
 ## Install dependencies and project
 

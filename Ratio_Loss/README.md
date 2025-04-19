@@ -1,4 +1,7 @@
-# A Flower / PyTorch app
+# Ratio loss
+
+
+Implementation of ratio loss, which is proposed in: [Addressing Class Imbalance in Federated Learning](https://ojs.aaai.org/index.php/AAAI/article/view/17219).
 
 ## Install dependencies and project
 

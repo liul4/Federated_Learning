@@ -1,4 +1,4 @@
-# A Flower / PyTorch app
+# Class-weighted cross-entropy loss
 
 ## Install dependencies and project
 
